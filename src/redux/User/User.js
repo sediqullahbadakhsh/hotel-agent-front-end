@@ -16,7 +16,6 @@ export const loginSuccess = (user) => ({
 const setToken = (token) => {
   localStorage.setItem('token', token);
   localStorage.setItem('lastLoginTime', new Date(Date.now()).getTime());
-  console.log(localStorage.getItem('token'));
 };
 
 export const createUser = (data) => async (dispatch) => {
