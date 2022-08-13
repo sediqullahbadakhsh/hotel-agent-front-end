@@ -2,12 +2,15 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom'
+
 import { createUser } from '../redux/User/User'
 
 export default function SignUp() {
+  const navigate = useNavigate()
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => dispatch(createUser(data)) ;
+  const onSubmit = (data) => (dispatch(createUser(data)) ? navigate('/log-in') : null) ;
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

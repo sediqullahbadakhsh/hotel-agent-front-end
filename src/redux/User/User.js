@@ -13,8 +13,9 @@ export const loginSuccess = (user) => ({
   user,
 });
 
-const setToken = (token) => {
+const setToken = (token, id) => {
   localStorage.setItem('token', token);
+  localStorage.setItem('userId', id);
   localStorage.setItem('lastLoginTime', new Date(Date.now()).getTime());
 };
 
@@ -56,9 +57,7 @@ export const logInUser = (data) => async (dispatch) => {
     .then((res) => res.json())
     .then((res) => {
       dispatch(loginSuccess(res));
-      if (res.ok) {
-        setToken(res.content.auth_token);
-      }
+      setToken(res.content.auth_token, res.user_id);
     })
     .catch((error) => { throw error; });
 };
