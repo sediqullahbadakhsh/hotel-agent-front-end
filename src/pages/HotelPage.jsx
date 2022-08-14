@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { listHotel, addHotel } from '../redux/Hotel/Hotel';
+import { listHotel, addHotel, viewHotel } from '../redux/Hotel/Hotel';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -23,6 +23,14 @@ const HomePage = () => {
         onClick={() => dispatch(addHotel())}
       >
         Add Hotel
+      </button>
+      <button
+        type="button"
+        className="microphone"
+        label="microphone"
+        onClick={() => dispatch(viewHotel())}
+      >
+        View Hotel
       </button>
     </div>
   );
