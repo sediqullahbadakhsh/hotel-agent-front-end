@@ -1,28 +1,28 @@
-import './App.css';
+import './App.scss';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import NavBar from './components/Navbar';
+import { fetchMostRecentHotels } from './redux/MostRecent/MostRecent';
+import DetailsPage from './pages/DetailsPage';
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchMostRecentHotels());
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        {' '}
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/hotel-details" element={<DetailsPage />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

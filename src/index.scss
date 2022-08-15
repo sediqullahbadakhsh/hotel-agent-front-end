@@ -1,0 +1,274 @@
+$green: #97bf0d;
+$text: #27363f;
+$light-gray: #eeeeed;
+$gray: #a3a4a4;
+$dark-gray: #626262;
+$icons: #3d3d3d;
+
+// font-family: 'Inter', sans-serif;
+// font-family: 'Lato', sans-serif;
+// font-family: 'Roboto Condensed', sans-serif;
+// font-family: 'Source Sans Pro', sans-serif;
+// font-family: 'Yellowtail', cursive;
+
+body {
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* stylelint-disable */
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
+/* stylelint-enable */
+
+ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.github svg,
+.facebook svg,
+.google svg,
+.twitter svg,
+.vimeo svg,
+.pinterest svg {
+  width: 16px;
+  height: 16px;
+  color: $icons;
+}
+
+.hamburguer svg {
+  width: 50px;
+  height: 30px;
+  color: $icons;
+}
+
+.hamburguer {
+  display: none;
+}
+
+.menu-link {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  margin-bottom: auto;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+.nav-style {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  // padding: 0.3vw 1.5vw;
+  width: 170px;
+  border-right: 2px solid $light-gray;
+  background: white;
+  font-family: Red Hat Display, sans-serif;
+}
+
+.nav-link-style {
+  color: $text;
+  margin-left: 0.9rem;
+  padding: 0.5rem 0.7rem;
+  text-decoration: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
+}
+
+.close-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-btn {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.close svg {
+  width: 20px;
+  height: 20px;
+  color: $icons;
+}
+
+.social-button {
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.icons {
+  display: flex;
+  gap: 0.5rem;
+  // margin: 2rem 0;
+  padding-inline-start: 0;
+}
+
+.icons::after {
+  background-color: $gray;
+}
+
+.social-icons {
+  display: inline-block;
+  text-decoration: none;
+  text-decoration-line: none;
+  // position: relative;
+  // padding-top: 10px;
+  // margin-right: 1rem;
+}
+
+.footer-menu {
+  margin-bottom: 1rem;
+  color: $text;
+  // font-family: 'Inter', sans-serif;
+  font-family: 'Lato', sans-serif;
+  // font-family: 'Roboto Condensed', sans-serif;
+
+  p {
+    font-size: 10px;
+  }
+}
+
+#logo {
+  margin-bottom: 3rem;
+
+  h1 {
+    font-family: 'Yellowtail', cursive;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .nav-style {
+    ul {
+      padding-inline-start: 0;
+    }
+
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: absolute;
+    border: none;
+    background: none;
+    margin-top: 1.2rem;
+    // justify-content: space-between;
+    // align-items: center;
+    // margin: 0;
+    padding: 0;
+    // background: rgba(33, 33, 33, 0.7);
+    // font-family: Red Hat Display, sans-serif;
+  }
+
+  .hamburguer {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+  }
+
+  .menu-link {
+    display: none;
+  }
+
+  .menu-item {
+    // padding: 1rem 0;
+    margin-left: 1rem;
+    // border-bottom: 1px solid black;
+    width: 95%;
+  }
+
+  .hidden {
+    overflow: hidden;
+  }
+
+  #logo-img {
+    margin-left: 1rem;
+  }
+
+  .nav-link-style {
+    font-size: 2.5em;
+    padding-inline-start: 0;
+    padding: 1rem;
+  }
+
+  .mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    overflow-y: scroll;
+    margin: 0;
+    margin-top: 1rem;
+    padding: 0;
+    z-index: 99;
+    font-size: 10px;
+    border-top: 2px solid $light-gray;
+    transition: 0.6s;
+  }
+
+  .headline-icons {
+    margin: 0;
+    left: 0;
+  }
+
+  .icons {
+    display: none;
+  }
+
+  .social-button {
+    margin: 0;
+    padding: 0;
+  }
+
+  .social-menu {
+    display: none;
+  }
+
+  .footer-menu {
+    display: none;
+  }
+
+  #logo,
+  #logo-text {
+    display: none;
+  }
+}
