@@ -25,7 +25,7 @@ const Navbar = () => {
     display: 'flex',
     alignItems: 'center',
     gap: '0',
-    color: 'white',
+    color: '$text',
   };
 
   return (
@@ -33,7 +33,7 @@ const Navbar = () => {
       <div id="logo" style={logoStyle}>
         <span id="logo-img" />
         <h1 id="logo-text">
-          Logo
+          Hotel Agent
         </h1>
       </div>
       <div className="menu-mobile">
@@ -50,11 +50,12 @@ const Navbar = () => {
             style={({ isActive }) => ({
               display: 'block',
               textDecoration: 'none',
-              color: isActive ? 'red' : 'white',
+              color: isActive ? 'white' : '#27363f',
+              backgroundColor: isActive ? '#97bf0d' : 'white',
             })}
             to="/"
           >
-            Featured
+            FEATURE
           </NavLink>
         </li>
 
@@ -68,11 +69,12 @@ const Navbar = () => {
             style={({ isActive }) => ({
               display: 'block',
               textDecoration: 'none',
-              color: isActive ? 'red' : 'white',
+              color: isActive ? 'white' : '#27363f',
+              backgroundColor: isActive ? '#97bf0d' : 'white',
             })}
             to="/hotel-details"
           >
-            List of hotels
+            HOTELS
           </NavLink>
         </li>
         <li
@@ -85,11 +87,12 @@ const Navbar = () => {
             style={({ isActive }) => ({
               display: 'block',
               textDecoration: 'none',
-              color: isActive ? 'red' : 'white',
+              color: isActive ? 'white' : '#27363f',
+              backgroundColor: isActive ? '#97bf0d' : 'white',
             })}
             to=""
           >
-            Reservations
+            RESERVATIONS
           </NavLink>
         </li>
         <li
@@ -102,11 +105,12 @@ const Navbar = () => {
             style={({ isActive }) => ({
               display: 'block',
               textDecoration: 'none',
-              color: isActive ? 'red' : 'white',
+              color: isActive ? 'white' : '#27363f',
+              backgroundColor: isActive ? '#97bf0d' : 'white',
             })}
             to=""
           >
-            Log in
+            LOG IN
           </NavLink>
         </li>
         <li
@@ -119,11 +123,12 @@ const Navbar = () => {
             style={({ isActive }) => ({
               display: 'block',
               textDecoration: 'none',
-              color: isActive ? 'red' : 'white',
+              color: isActive ? 'white' : '#27363f',
+              backgroundColor: isActive ? '#97bf0d' : 'white',
             })}
             to=""
           >
-            Sign up
+            SIGN UP
           </NavLink>
         </li>
         <li
@@ -136,16 +141,20 @@ const Navbar = () => {
             style={({ isActive }) => ({
               display: 'block',
               textDecoration: 'none',
-              color: isActive ? 'red' : 'white',
+              color: isActive ? 'white' : '#27363f',
+              backgroundColor: isActive ? '#97bf0d' : 'white',
             })}
             to=""
           >
-            Log out
+            LOG OUT
           </NavLink>
         </li>
       </ul>
       <div className="social-menu">
         <Social />
+      </div>
+      <div className="footer-menu">
+        <p>&copy; 2022 All rights reserved</p>
       </div>
     </nav>
   );
