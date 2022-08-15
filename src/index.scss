@@ -53,7 +53,7 @@ ul {
 .hamburguer svg {
   width: 50px;
   height: 30px;
-  color: icons;
+  color: $icons;
 }
 
 .hamburguer {
@@ -63,11 +63,10 @@ ul {
 .menu-link {
   display: flex;
   flex-direction: column;
-  // gap: 2vw;
   list-style: none;
-  padding: 0;
-  margin-bottom: auto; 
   width: 100%;
+  padding: 0;
+  margin-bottom: auto;
 }
 
 .hidden {
@@ -97,7 +96,6 @@ ul {
   text-decoration: none;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 900;
-
 }
 
 .close-button {
@@ -121,7 +119,6 @@ ul {
   color: $icons;
 }
 
-
 .social-button {
   margin: 0;
   padding: 0;
@@ -139,9 +136,6 @@ ul {
 }
 
 .icons::after {
-//   // content: "";
-//   // width: 1px;
-//   // height: 90px;
   background-color: $gray;
 }
 
@@ -158,8 +152,8 @@ ul {
   margin-bottom: 1rem;
   color: $text;
   // font-family: 'Inter', sans-serif;
-font-family: 'Lato', sans-serif;
-// font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Lato', sans-serif;
+  // font-family: 'Roboto Condensed', sans-serif;
 
   p {
     font-size: 10px;
@@ -180,21 +174,20 @@ font-family: 'Lato', sans-serif;
       padding-inline-start: 0;
     }
 
-  position: unset;
-  width: 100%;
-  height: auto;
-  flex-direction: row;
-  justify-content: flex-start;
-  position: absolute;
-  border: none;
-  background: none;
-  margin-top: 1.2rem;
-  // justify-content: space-between;
-  // align-items: center;
-  // margin: 0;
-  padding: 0;
-  // background: rgba(33, 33, 33, 0.7);
-  // font-family: Red Hat Display, sans-serif;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: absolute;
+    border: none;
+    background: none;
+    margin-top: 1.2rem;
+    // justify-content: space-between;
+    // align-items: center;
+    // margin: 0;
+    padding: 0;
+    // background: rgba(33, 33, 33, 0.7);
+    // font-family: Red Hat Display, sans-serif;
   }
 
   .hamburguer {
@@ -258,7 +251,7 @@ font-family: 'Lato', sans-serif;
   }
 
   .icons {
-    display: none
+    display: none;
   }
 
   .social-button {
@@ -278,5 +271,4 @@ font-family: 'Lato', sans-serif;
   #logo-text {
     display: none;
   }
-
 }
