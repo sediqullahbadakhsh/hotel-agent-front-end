@@ -34,7 +34,6 @@ export const listHotel = () => async (dispatch) => {
     .then((data) => data.json())
     .then((data) => {
       dispatch(dataSucces(data));
-      console.log(data);
     })
     .catch((error) => {
       throw error;

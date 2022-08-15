@@ -32,18 +32,20 @@ const Navbar = () => {
     <nav className="nav-style">
       <div id="logo" style={logoStyle}>
         <span id="logo-img" />
-        <h1 id="logo-text">
-          Hotel Agent
-        </h1>
+        <h1 id="logo-text">Hotel Agent</h1>
       </div>
       <div className="menu-mobile">
-        <button className="hamburguer" type="button" label="menu" onClick={displayMenu}>{showMenu ? (<AiFillCloseCircle />) : (<AiOutlineMenu />)}</button>
+        <button
+          className="hamburguer"
+          type="button"
+          label="menu"
+          onClick={displayMenu}
+        >
+          {showMenu ? <AiFillCloseCircle /> : <AiOutlineMenu />}
+        </button>
       </div>
       <ul className={showMenu ? 'menu-link mobile' : 'menu-link'}>
-        <li
-          className="menu-item"
-          key={1}
-        >
+        <li className="menu-item" key={1}>
           <NavLink
             className="nav-link-style"
             onClick={handleClick}
@@ -59,10 +61,7 @@ const Navbar = () => {
           </NavLink>
         </li>
 
-        <li
-          className="menu-item"
-          key={2}
-        >
+        <li className="menu-item" key={2}>
           <NavLink
             className="nav-link-style"
             onClick={handleClick}
@@ -77,10 +76,7 @@ const Navbar = () => {
             HOTELS
           </NavLink>
         </li>
-        <li
-          className="menu-item"
-          key={3}
-        >
+        <li className="menu-item" key={3}>
           <NavLink
             className="nav-link-style"
             onClick={handleClick}
@@ -95,10 +91,7 @@ const Navbar = () => {
             RESERVATIONS
           </NavLink>
         </li>
-        <li
-          className="menu-item"
-          key={4}
-        >
+        <li className="menu-item" key={4}>
           <NavLink
             className="nav-link-style"
             onClick={handleClick}
@@ -113,10 +106,7 @@ const Navbar = () => {
             LOG IN
           </NavLink>
         </li>
-        <li
-          className="menu-item"
-          key={5}
-        >
+        <li className="menu-item" key={5}>
           <NavLink
             className="nav-link-style"
             onClick={handleClick}
@@ -131,10 +121,7 @@ const Navbar = () => {
             SIGN UP
           </NavLink>
         </li>
-        <li
-          className="menu-item"
-          key={6}
-        >
+        <li className="menu-item" key={6}>
           <NavLink
             className="nav-link-style"
             onClick={handleClick}
