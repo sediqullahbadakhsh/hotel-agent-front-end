@@ -4,6 +4,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable max-len */
+/* eslint-disable */
+
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
@@ -47,9 +49,7 @@ const DetailsPage = () => {
   return (
     <div className="App">
       <div className="title-container">
-        <h2>
-          { hotel[0].name.toUpperCase() }
-        </h2>
+        <h2>{hotel[0].name.toUpperCase()}</h2>
       </div>
 
       <div className="details-container">
@@ -79,27 +79,35 @@ const DetailsPage = () => {
             // dotListClass="custom-dot-list-style"
             // itemClass="carousel-item-padding-40-px"
           >
-            <div><img src={hotel[0].image[0]} alt="hotel" className="details-img" /></div>
             <div>
-              <img src={hotel[0].image[1]} alt="hotel" className="details-img" />
+              <img
+                src={hotel[0].image[0]}
+                alt="hotel"
+                className="details-img"
+              />
             </div>
-            <div><img src={hotel[0].image[2]} alt="hotel" className="details-img" /></div>
+            <div>
+              <img
+                src={hotel[0].image[1]}
+                alt="hotel"
+                className="details-img"
+              />
+            </div>
+            <div>
+              <img
+                src={hotel[0].image[2]}
+                alt="hotel"
+                className="details-img"
+              />
+            </div>
           </Carousel>
         </div>
         <div className="hotel-details">
-          <p className="text-xl">
-            📌
-            {' '}
-            { hotel[0].address }
-          </p>
+          <p className="text-xl">📌 {hotel[0].address}</p>
           <div className="odd">
             <p>Price</p>
             <div className="views">
-              <p>
-                $
-                {' '}
-                { hotel[0].cost }
-              </p>
+              <p>$ {hotel[0].cost}</p>
             </div>
           </div>
           <div className="even">
@@ -108,20 +116,26 @@ const DetailsPage = () => {
               <p>🔖</p>
             </div>
           </div>
-          <p className="text-xl">
-            { hotel[0].description }
-          </p>
-          <button type="button" className="button-details" label="Reserve" onClick={() => dispatch(createUser())}>
+          <p className="text-xl">{hotel[0].description}</p>
+          <button
+            type="button"
+            className="button-details"
+            label="Reserve"
+            onClick={() => dispatch(createUser())}
+          >
             <BsBookmarkCheckFill />
-            Reserve
-            {' '}
-            <FiArrowRightCircle />
+            Reserve <FiArrowRightCircle />
           </button>
         </div>
       </div>
       <div className="return-btn">
         <Link to="/">
-          <button type="button" className="button-return" label="Reserve" onClick={() => dispatch(createUser())}>
+          <button
+            type="button"
+            className="button-return"
+            label="Reserve"
+            onClick={() => dispatch(createUser())}
+          >
             <BiLeftArrow />
           </button>
         </Link>

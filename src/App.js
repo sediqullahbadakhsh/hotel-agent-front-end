@@ -12,6 +12,7 @@ import DetailsPage from './pages/DetailsPage';
 import FeaturedPage from './pages/FeaturedPage';
 import ErrorPage from './pages/ErrorPage';
 import ReservePage from './pages/ReservePage';
+import AddHotel from './pages/AddHotelPage';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const App = () => {
         <Route path="/reserve" element={<ReservePage />} />
         <Route path="sign-up" element={<SignUp />} />
         <Route path="log-in" element={<Login />} />
-        <Route path="hotel" element={<HotelPage />} />
+        <Route path="/hotel" element={<HotelPage />} />
         <Route path="/hotel/:name" element={<DetailsPage />} />
         <Route path="/add-hotel" element={<AddHotel />} />
         <Route path="*" element={<ErrorPage />} />
