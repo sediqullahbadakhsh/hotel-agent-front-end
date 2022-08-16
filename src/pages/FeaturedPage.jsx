@@ -24,6 +24,7 @@ const FeaturedPage = () => {
     },
   };
   const { data } = useSelector((state) => state.MostRecent);
+
   return (
     <div className="featured-container">
       <div className="featured-heading">
