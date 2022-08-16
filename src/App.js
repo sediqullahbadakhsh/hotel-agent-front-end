@@ -10,6 +10,7 @@ import Login from './components/Login';
 import HotelPage from './pages/HotelPage';
 import DetailsPage from './pages/DetailsPage';
 import FeaturedPage from './pages/FeaturedPage';
+import ErrorPage from './pages/ErrorPage';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="log-in" element={<Login />} />
         <Route path="hotel" element={<HotelPage />} />
         <Route path="/hotel/:name" element={<DetailsPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
   );

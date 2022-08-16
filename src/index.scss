@@ -397,6 +397,26 @@ ul {
   cursor: pointer;
 }
 
+.center-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+
+  .error-message {
+    font-family: 'Source Sans Pro', sans-serif;
+
+    h1 {
+      font-size: 3em;
+    }
+
+    h2 {
+      font-size: 2em;
+    }
+  }
+}
+
 @media screen and (max-width: 769px) {
   .nav-style {
     ul {
