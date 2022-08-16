@@ -40,8 +40,8 @@ export const listHotel = () => async (dispatch) => {
     });
 };
 
-export const addHotel = () => async (dispatch) => {
-  fetch('http://127.0.0.1:3000/v1/users/2/hotels', {
+export const addHotel = (data) => async (dispatch) => {
+  fetch(`http://127.0.0.1:3000/v1/users/${localStorage.getItem('userId')}/hotels`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -49,11 +49,12 @@ export const addHotel = () => async (dispatch) => {
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     },
     body: JSON.stringify({
-      name: 'Apple',
-      description: 'some description',
-      cost: 3.2,
-      address: 'somewhere',
-      image: 'some photo',
+      name: data.name,
+      description: data.description,
+      cost: data.cost,
+      address: data.address,
+      image: data.image,
+
     }),
   })
     .then((data) => data.json())
