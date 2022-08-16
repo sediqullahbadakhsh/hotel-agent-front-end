@@ -6,6 +6,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams, Link } from 'react-router-dom';
 import { FiArrowRightCircle } from 'react-icons/fi';
 import { BsBookmarkCheckFill } from 'react-icons/bs';
 import { BiLeftArrow } from 'react-icons/bi';
@@ -15,8 +16,13 @@ import 'react-multi-carousel/lib/styles.css';
 
 const DetailsPage = () => {
   // const { hotel } = prop;
-  const { data } = useSelector((state) => state.MostRecent);
+  const { data, status } = useSelector((state) => state.MostRecent);
   const dispatch = useDispatch();
+
+  let { name } = useParams();
+  const hotel = data.filter((hotel) => hotel.id === parseInt(name, 10));
+  console.log(status);
+  name = name.replace(/_/g, ' ');
 
   const responsive = {
     superLargeDesktop: {
@@ -42,7 +48,7 @@ const DetailsPage = () => {
     <div className="App">
       <div className="title-container">
         <h2>
-          { data[2].name.toUpperCase() }
+          { hotel[0].name.toUpperCase() }
         </h2>
       </div>
 
@@ -73,18 +79,18 @@ const DetailsPage = () => {
             // dotListClass="custom-dot-list-style"
             // itemClass="carousel-item-padding-40-px"
           >
-            <div><img src={data[2].image[0]} alt="hotel" className="details-img" /></div>
+            <div><img src={hotel[0].image[0]} alt="hotel" className="details-img" /></div>
             <div>
-              <img src={data[2].image[1]} alt="hotel" className="details-img" />
+              <img src={hotel[0].image[1]} alt="hotel" className="details-img" />
             </div>
-            <div><img src={data[2].image[2]} alt="hotel" className="details-img" /></div>
+            <div><img src={hotel[0].image[2]} alt="hotel" className="details-img" /></div>
           </Carousel>
         </div>
         <div className="hotel-details">
           <p className="text-xl">
             📌
             {' '}
-            { data[2].address }
+            { hotel[0].address }
           </p>
           <div className="odd">
             <p>Price</p>
@@ -92,7 +98,7 @@ const DetailsPage = () => {
               <p>
                 $
                 {' '}
-                { data[2].cost }
+                { hotel[0].cost }
               </p>
             </div>
           </div>
@@ -103,7 +109,7 @@ const DetailsPage = () => {
             </div>
           </div>
           <p className="text-xl">
-            { data[2].description }
+            { hotel[0].description }
           </p>
           <button type="button" className="button-details" label="Reserve" onClick={() => dispatch(createUser())}>
             <BsBookmarkCheckFill />
@@ -114,9 +120,11 @@ const DetailsPage = () => {
         </div>
       </div>
       <div className="return-btn">
-        <button type="button" className="button-return" label="Reserve" onClick={() => dispatch(createUser())}>
-          <BiLeftArrow />
-        </button>
+        <Link to="/">
+          <button type="button" className="button-return" label="Reserve" onClick={() => dispatch(createUser())}>
+            <BiLeftArrow />
+          </button>
+        </Link>
       </div>
     </div>
   );
