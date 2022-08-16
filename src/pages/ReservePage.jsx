@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import ReactDatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import countries from '../components/CountryPicker';
+import background from '../img/background.jpg';
 
 const ReservePage = () => {
 //   const dispatch = useDispatch();
@@ -20,83 +21,81 @@ const ReservePage = () => {
     : isoCode);
 
   return (
-    <div className="reserve-container">
-      <div className="reserve-heading">
-        <h1>BOOK A HOTEL</h1>
-        <p>Please select a Hotel</p>
-      </div>
-      <div className="reserve-form">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <section>
-            <select {...register('country', { required: true })}>
-              {countries.map((item) => (
-                <option key={item.id} value={item.label}>
-                  {item.label}
-                  {' '}
-                  {countryToFlag(item.code)}
-                </option>
-              ))}
-            </select>
-          </section>
-          <section>
-            <Controller
-              control={control}
-              name="date"
-              render={({
-                field: {
-                  onChange, onBlur, value, ref,
-                },
-              }) => (
-                <ReactDatePicker
-                  onChange={onChange}
-                  onBlur={onBlur}
-                  selected={value}
-                  placeholderText="Select date"
-                />
-              )}
-            />
-          </section>
-          <section>
-            <input
-              placeholder="Number of days"
-              {...register('number_of_days', {
-                valueAsNumber: true,
-                validate: (value) => value > 0,
-              })}
-            />
-            <input
-              placeholder="Number of rooms"
-              {...register('number_of_rooms', {
-                valueAsNumber: true,
-                validate: (value) => value > 0,
-              })}
-            />
-            <input
-              placeholder="Number of guests"
-              {...register('number_of_guests', {
-                valueAsNumber: true,
-                validate: (value) => value > 0,
-              })}
-            />
+    <div className="reserve-container" style={{ 
+        backgroundImage: `url(${background})` 
+      }}>
+      <><div className="reserve-heading">
+              <h1>BOOK A HOTEL</h1>
+              <hr></hr>
+              <p>Please select a Hotel</p>
+          </div><div className="reserve-form">
+                  <form onSubmit={handleSubmit(onSubmit)}>
+                      <section className='countries-container'>
+                          <select {...register('country', { required: true })}>
+                              {countries.map((item) => (
+                                  <option key={item.id} value={item.label}>
+                                      {item.label}
+                                      {' '}
+                                      {countryToFlag(item.code)}
+                                  </option>
+                              ))}
+                          </select>
+                      </section>
+                      <section className='date-container'>
+                          <Controller
+                              control={control}
+                              name="date"
+                              render={({
+                                  field: {
+                                      onChange, onBlur, value, ref,
+                                  },
+                              }) => (
+                                  <ReactDatePicker
+                                      className='date-picker'
+                                      onChange={onChange}
+                                      onBlur={onBlur}
+                                      selected={value}
+                                      placeholderText="Select date" />
+                              )} />
+                      </section>
+                      <section className='options-container'>
+                          <input
+                              placeholder="Number of days"
+                              {...register('number_of_days', {
+                                  valueAsNumber: true,
+                                  validate: (value) => value > 0,
+                              })} />
+                          <input
+                              placeholder="Number of rooms"
+                              {...register('number_of_rooms', {
+                                  valueAsNumber: true,
+                                  validate: (value) => value > 0,
+                              })} />
+                          <input
+                              placeholder="Number of guests"
+                              {...register('number_of_guests', {
+                                  valueAsNumber: true,
+                                  validate: (value) => value > 0,
+                              })} />
 
-          </section>
-          <section>
-            <label>Select Hotel</label>
-            <select
-              {...register('hotel_id', { required: true })}
-            >
-              {data.map((item) => (
-                <option key={item.id} value={item.id}>
-                  {item.name}
-                </option>
-              ))}
-            </select>
-          </section>
-          <section>
-            <input type="submit" />
-          </section>
-        </form>
-      </div>
+                      </section>
+                      <section className='select-hotel-container'>
+                          <label>Select Hotel:</label>
+                          <select
+                              {...register('hotel_id', { required: true })}
+                          >
+                              {data.map((item) => (
+                                  <option key={item.id} value={item.id}>
+                                      {item.name}
+                                  </option>
+                              ))}
+                          </select>
+                      </section>
+                      <section className='submit-container'>
+                          <input type="submit" />
+                      </section>
+                  </form>
+              </div></>
 
     </div>
   );

@@ -418,6 +418,10 @@ ul {
 }
 
 .reserve-container {
+  background-color: $green;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: soft-light;
   margin-left: 170px;
   display: flex;
   flex-direction: column;
@@ -425,6 +429,7 @@ ul {
   align-items: center;
   text-align: center;
   min-height: 100vh;
+  color: white;
 
   .reserve-heading {
     align-self: center;
@@ -433,16 +438,115 @@ ul {
 
     h1 {
       font-weight: 700;
-      font-size: 3rem;
+      font-size: 2.5rem;
+      letter-spacing: 5px;
+      margin-block-end: 0;
+    }
+
+    hr {
+      width: 100%;
+      border: 0.5px solid white;
     }
 
     p {
-      color: $dark-gray;
-      font-size: 1rem;
-      margin-top: -20px;
+      color: white;
+      font-size: 1.5rem;
+      // font-weight: 200;
+      // margin-top: -20px;
     }
 
-    padding-bottom: 30px;
+    padding-bottom: 1rem;
+  }
+}
+
+.reserve-form {
+  // ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  //   color: white;
+  //   opacity: 1; /* Firefox */
+  // }
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.countries-container {
+  select {
+    width: 30%;
+    height: 40px;
+    padding: 10px 15px;
+    border: 1.5px solid white;
+    color: white;
+    background-color: $green;
+  }
+}
+
+.date-container {
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+  margin: 1rem;
+  .date-picker {
+    text-align: center;
+    padding: 0.5rem 1.25rem;
+    background-color: $green;
+    border: none;
+    border-radius: 15px;
+    border: 1.5px solid white;
+    color: white;
+    font-size: 0.8em;
+    font-weight: 400;
+    cursor: pointer;
+  }
+}
+
+.options-container {
+  margin: 1rem;
+  input {
+    margin: 0.5rem;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    border: 2px solid white;
+    color: white;
+    font-size: 0.8em;
+    font-weight: 400;
+    cursor: pointer;
+  }
+}
+
+.select-hotel-container {
+  label {
+    margin-right: 1rem;
+    color: white;
+    font-weight: 400;
+  }
+
+  select {
+    width: 20%;
+    height: 40px;
+    padding: 10px 15px;
+    border: 1.5px solid white;
+    color: white;
+    background-color: $green;
+  }
+}
+
+.submit-container {
+  margin: 1rem;
+  input {
+    margin: 0.5rem;
+    text-align: center;
+    padding: 0.5rem 1.25rem;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    border: 2px solid white;
+    color: $green;
+    font-size: 0.8em;
+    font-weight: 600;
+    cursor: pointer;
   }
 }
 
