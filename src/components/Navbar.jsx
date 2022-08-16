@@ -101,7 +101,7 @@ const Navbar = () => {
               color: isActive ? 'white' : '#27363f',
               backgroundColor: isActive ? '#97bf0d' : 'white',
             })}
-            to=""
+            to="/log-in"
           >
             LOG IN
           </NavLink>
@@ -116,7 +116,7 @@ const Navbar = () => {
               color: isActive ? 'white' : '#27363f',
               backgroundColor: isActive ? '#97bf0d' : 'white',
             })}
-            to=""
+            to="/sign-up"
           >
             SIGN UP
           </NavLink>
