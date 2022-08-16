@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { RiFacebookCircleLine, RiInstagramLine } from 'react-icons/ri';
 import { TiSocialTwitterCircular } from 'react-icons/ti';
 
@@ -11,6 +12,9 @@ const FeaturedHotel = ({ hotel }) => {
     cursor: 'pointer',
   };
   return (
+    <Link
+        to={`/hotel/${hotel.id}`}
+      >
     <div className="ft-card">
       <div className="img-container">
         <img src={hotel.image[0]} alt={hotel.name} className="carousel-image" />
@@ -32,6 +36,7 @@ const FeaturedHotel = ({ hotel }) => {
         </span>
       </div>
     </div>
+    </Link>
   );
 };
 
