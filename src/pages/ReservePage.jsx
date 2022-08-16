@@ -10,7 +10,10 @@ import background from '../img/background.jpg';
 const ReservePage = () => {
 //   const dispatch = useDispatch();
   const { register, handleSubmit, control } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data, e) => {
+    console.log(data);
+    e.target.reset();
+}
   //   dispatch(logInUser(data));
   const { data } = useSelector((state) => state.MostRecent);
 
@@ -29,11 +32,11 @@ const ReservePage = () => {
               <hr></hr>
               <p>Please select a Hotel</p>
           </div><div className="reserve-form">
-                  <form onSubmit={handleSubmit(onSubmit)}>
+                  <form onSubmit={handleSubmit(onSubmit)} >
                       <section className='countries-container'>
                           <select {...register('country', { required: true })}>
                               {countries.map((item) => (
-                                  <option key={item.id} value={item.label}>
+                                  <option key={item.label} value={item.label}>
                                       {item.label}
                                       {' '}
                                       {countryToFlag(item.code)}
@@ -85,7 +88,7 @@ const ReservePage = () => {
                               {...register('hotel_id', { required: true })}
                           >
                               {data.map((item) => (
-                                  <option key={item.id} value={item.id}>
+                                  <option key={item.name} value={item.id}>
                                       {item.name}
                                   </option>
                               ))}
