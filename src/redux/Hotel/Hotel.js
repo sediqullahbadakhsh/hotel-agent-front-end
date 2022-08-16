@@ -23,14 +23,17 @@ export const deleteHotelSucces = (hotel) => ({
 });
 
 export const listHotel = () => async (dispatch) => {
-  fetch('http://localhost:3000/v1/users/2/hotels', {
-    method: 'GET',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${localStorage.getItem('token')}`,
+  fetch(
+    `http://localhost:3000/v1/users/${localStorage.getItem('userId')}/hotels`,
+    {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
     },
-  })
+  )
     .then((data) => data.json())
     .then((data) => {
       dispatch(dataSucces(data));
@@ -41,22 +44,24 @@ export const listHotel = () => async (dispatch) => {
 };
 
 export const addHotel = (data) => async (dispatch) => {
-  fetch(`http://127.0.0.1:3000/v1/users/${localStorage.getItem('userId')}/hotels`, {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${localStorage.getItem('token')}`,
+  fetch(
+    `http://127.0.0.1:3000/v1/users/${localStorage.getItem('userId')}/hotels`,
+    {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+      body: JSON.stringify({
+        name: data.name,
+        description: data.description,
+        cost: data.cost,
+        address: data.address,
+        image: data.image,
+      }),
     },
-    body: JSON.stringify({
-      name: data.name,
-      description: data.description,
-      cost: data.cost,
-      address: data.address,
-      image: data.image,
-
-    }),
-  })
+  )
     .then((data) => data.json())
     .then((data) => {
       dispatch(addHotelSucces(data));
