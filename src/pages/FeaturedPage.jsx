@@ -25,22 +25,19 @@ const FeaturedPage = () => {
   };
   const { data } = useSelector((state) => state.MostRecent);
   return (
-    <div className="App featured-container">
+    <div className="featured-container">
       <div className="featured-heading">
         <h1>Featured Hotels</h1>
-        <p>please choose a Hotel</p>
+        <p>Please select a Hotel</p>
       </div>
       <Carousel
         swipeable={true}
         draggable={true}
         responsive={responsive}
-        infinite={true}
         keyBoardControl={true}
         customTransition="all .5"
-        transitionDuration={500}
         containerClass="carousel-container"
         removeArrowOnDeviceType={['tablet', 'mobile']}
-        dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
       >
         {data.map((hotel) => (
