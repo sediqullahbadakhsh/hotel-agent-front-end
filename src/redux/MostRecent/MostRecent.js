@@ -12,7 +12,9 @@ export const fetchMostRecentHotels = () => async (dispatch) => {
     .then((data) => {
       dispatch(success(data));
     })
-    .catch((error) => { throw error; });
+    .catch((error) => {
+      throw error;
+    });
 };
 
 const mostRecentReducer = (state = initialState, action) => {
