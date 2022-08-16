@@ -10,7 +10,7 @@ export default function Login() {
   const onSubmit = (data) => dispatch(logInUser(data)) ;
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} style = {{float : "right"}}>
       {/* register your input into the hook by invoking the "register" function */}
       <input {...register('email')} placeholder ="email" />
       <input {...register('password')} placeholder="password" />
