@@ -417,6 +417,35 @@ ul {
   }
 }
 
+.reserve-container {
+  margin-left: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+
+  .reserve-heading {
+    align-self: center;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+
+    h1 {
+      font-weight: 700;
+      font-size: 3rem;
+    }
+
+    p {
+      color: $dark-gray;
+      font-size: 1rem;
+      margin-top: -20px;
+    }
+
+    padding-bottom: 30px;
+  }
+}
+
 @media screen and (max-width: 769px) {
   .nav-style {
     ul {
@@ -519,5 +548,43 @@ ul {
   #logo,
   #logo-text {
     display: none;
+  }
+
+  .button-return {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+
+  .details-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .featured-container {
+    margin-left: 0;
+  }
+
+  .title-container {
+    padding: 5rem 0 1rem;
+  
+    h2 {
+      text-align: center;
+      font-size: 2em;
+    }
+  }
+
+  .hotel-images {
+    margin: 0;
+    margin-bottom: 1rem;
+    width: 90%;
+  }
+
+  .hotel-details {
+    text-align: center;
+  }
+
+  .reserve-container {
+    margin-left: 0;
   }
 }

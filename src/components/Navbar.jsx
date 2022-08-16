@@ -71,9 +71,9 @@ const Navbar = () => {
               color: isActive ? 'white' : '#27363f',
               backgroundColor: isActive ? '#97bf0d' : 'white',
             })}
-            to="/hotel-details"
+            to="/reserve"
           >
-            HOTELS
+            RESERVE
           </NavLink>
         </li>
         <li className="menu-item" key={3}>
