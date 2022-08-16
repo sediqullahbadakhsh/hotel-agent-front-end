@@ -9,13 +9,14 @@ import SignUp from './components/SignUp';
 import Login from './components/Login';
 import HotelPage from './pages/HotelPage';
 import DetailsPage from './pages/DetailsPage';
+import FeaturedPage from './pages/FeaturedPage';
 
 const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchMostRecentHotels());
-  });
+  }, []);
 
   return (
     <Router>
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="log-in" element={<Login />} />
         <Route path="hotel" element={<HotelPage />} />
         <Route path="/hotel-details" element={<DetailsPage />} />
+        <Route path="/featured" element={<FeaturedPage />} />
       </Routes>
     </Router>
   );
