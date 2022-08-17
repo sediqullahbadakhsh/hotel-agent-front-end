@@ -12,7 +12,6 @@ import FeaturedPage from './pages/FeaturedPage';
 import ErrorPage from './pages/ErrorPage';
 import ReservePage from './pages/ReservePage';
 import AddHotel from './pages/AddHotelPage';
-import ReserveDefault from './components/ReserveDefault';
 import { listHotel } from './redux/Hotel/Hotel';
 import ReserveDefault from './components/ReserveDefault';
 
