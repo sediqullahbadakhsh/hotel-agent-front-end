@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import HotelList from '../components/HotelList';
 
 const HomePage = () => {
@@ -10,9 +11,11 @@ const HomePage = () => {
       <div className="list-heading">
         <h1>Hotel List</h1>
       </div>
-      <button type="button" className="addNewBtn">
-        Add new Hotel
-      </button>
+      <Link to="/add-hotel">
+        <button type="button" className="addNewBtn ">
+          Add new Hotel
+        </button>
+      </Link>
       <div className="hotel-list">
         {data.map((hotel) => (
           <HotelList hotel={hotel} key={hotel.id} />

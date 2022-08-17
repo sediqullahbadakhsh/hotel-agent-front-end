@@ -91,7 +91,7 @@ const ReservePage = () => {
 
                       </section>
                       <section className='submit-container'>
-                          <input type="submit" />
+                          <input type="submit" value="RESERVE"/>
                       </section>
                   </form>
               </div></>

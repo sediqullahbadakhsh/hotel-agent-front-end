@@ -47,7 +47,9 @@ const DetailsPage = () => {
   return (
     <div className="App">
       <div className="title-container">
-        <h2>{hotel[0].name.toUpperCase()}</h2>
+        <h2>
+          { hotel[0].name.toUpperCase() }
+        </h2>
       </div>
 
       <div className="details-container">
@@ -102,7 +104,7 @@ const DetailsPage = () => {
             { hotel[0].description }
           </p>
           <Link to={`/reserve/${hotel[0].id}`}>
-            <button type="button" className="button-details" label="Reserve" onClick={() => dispatch(createUser())}>
+            <button type="button" className="button-details" label="Reserve">
               <BsBookmarkCheckFill />
               Reserve
               {' '}
