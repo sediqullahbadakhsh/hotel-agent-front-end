@@ -25,7 +25,8 @@ const Navbar = () => {
   };
 
   const handleClickLogOut = () => {
-    dispatch(logout());
+    // eslint-disable-next-line no-unused-expressions
+    dispatch(logout()) ? window.location.reload() : null;
     if (window.innerWidth < 769 && showMenu === true) {
       setShowMenu(!showMenu);
       document.body.classList.toggle('hidden');
