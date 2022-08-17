@@ -67,19 +67,19 @@ const ReservePage = () => {
                       </section>
                       <section className='options-container'>
                           <input
-                              placeholder="Number of days"
+                              placeholder="🏖 Number of days"
                               {...register('number_of_days', {
                                   valueAsNumber: true,
                                   validate: (value) => value > 0,
                               })} />
                           <input
-                              placeholder="Number of rooms"
+                              placeholder="🏘 Number of rooms"
                               {...register('number_of_rooms', {
                                   valueAsNumber: true,
                                   validate: (value) => value > 0,
                               })} />
                           <input
-                              placeholder="Number of guests"
+                              placeholder="👥 Number of guests"
                               {...register('number_of_guests', {
                                   valueAsNumber: true,
                                   validate: (value) => value > 0,
@@ -99,7 +99,7 @@ const ReservePage = () => {
                           </select>
                       </section>
                       <section className='submit-container'>
-                          <input type="submit" />
+                          <input type="submit" value="RESERVE"/>
                       </section>
                   </form>
               </div></>
