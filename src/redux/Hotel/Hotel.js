@@ -87,15 +87,20 @@ export const viewHotel = () => async (dispatch) => {
       throw error;
     });
 };
-export const deleteHotel = () => async (dispatch) => {
-  fetch('http://127.0.0.1:3000/v1/users/2/hotels/3', {
-    method: 'DELETE',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${localStorage.getItem('token')}`,
+export const deleteHotel = (hotel) => async (dispatch) => {
+  fetch(
+    `http://127.0.0.1:3000/v1/users/${localStorage.getItem(
+      'userId',
+    )}/hotels/${hotel}`,
+    {
+      method: 'DELETE',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
     },
-  })
+  )
     .then((data) => data.json())
     .then((data) => {
       dispatch(deleteHotelSucces(data));
