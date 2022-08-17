@@ -9,7 +9,7 @@ import create from '../img/create.jpg';
 export default function AddHotel() {
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => dispatch(addHotel(data));
+  const onSubmit = (data,e) => {dispatch(addHotel(data)); e.target.reset();}
   return (
     <div className="reserve-container" style={{ 
       backgroundImage: `url(${create})` 
