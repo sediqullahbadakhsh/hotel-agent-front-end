@@ -1,50 +1,23 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import {
-  listHotel,
-  addHotel,
-  viewHotel,
-  deleteHotel,
-} from '../redux/Hotel/Hotel';
+import { useSelector } from 'react-redux';
+import HotelList from '../components/HotelList';
 
 const HomePage = () => {
-  const dispatch = useDispatch();
-  return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <button
-        type="button"
-        className="microphone"
-        label="microphone"
-        onClick={() => dispatch(listHotel())}
-      >
-        List Hotel
-      </button>
+  const { data } = useSelector((state) => state.Hotel);
 
-      <button
-        type="button"
-        className="microphone"
-        label="microphone"
-        onClick={() => dispatch(addHotel())}
-      >
-        Add Hotel
+  return (
+    <div className="featured-container">
+      <div className="list-heading">
+        <h1>Hotel List</h1>
+      </div>
+      <button type="button" className="addNewBtn">
+        Add new Hotel
       </button>
-      <button
-        type="button"
-        className="microphone"
-        label="microphone"
-        onClick={() => dispatch(viewHotel())}
-      >
-        View Hotel
-      </button>
-      <button
-        type="button"
-        className="microphone"
-        label="microphone"
-        onClick={() => dispatch(deleteHotel())}
-      >
-        Delete Hotel
-      </button>
+      <div className="hotel-list">
+        {data.map((hotel) => (
+          <HotelList hotel={hotel} key={hotel.id} />
+        ))}
+      </div>
     </div>
   );
 };
