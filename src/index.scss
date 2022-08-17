@@ -446,6 +446,10 @@ ul {
     padding-bottom: 30px;
   }
 }
+.hotel-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
 @media screen and (max-width: 769px) {
   .nav-style {
@@ -568,7 +572,7 @@ ul {
 
   .title-container {
     padding: 5rem 0 1rem;
-  
+
     h2 {
       text-align: center;
       font-size: 2em;
