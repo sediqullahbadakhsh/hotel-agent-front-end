@@ -12,14 +12,13 @@ const FeaturedHotel = ({ hotel }) => {
     cursor: 'pointer',
   };
   return (
-    <Link
-        to={`/hotel/${hotel.id}`}
-      >
     <div className="ft-card">
       <div className="img-container">
         <img src={hotel.image[0]} alt={hotel.name} className="carousel-image" />
       </div>
-      <p className="card-title">{hotel.name}</p>
+      <Link to={`/hotel/${hotel.id}`}>
+        <p className="card-title">{hotel.name}</p>
+      </Link>
       <p className="line">-----------------------</p>
       <div className="description-container">
         <p className="card-description">{hotel.description}</p>
@@ -36,7 +35,6 @@ const FeaturedHotel = ({ hotel }) => {
         </span>
       </div>
     </div>
-    </Link>
   );
 };
 
