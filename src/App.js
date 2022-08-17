@@ -12,6 +12,7 @@ import FeaturedPage from './pages/FeaturedPage';
 import ErrorPage from './pages/ErrorPage';
 import ReservePage from './pages/ReservePage';
 import AddHotel from './pages/AddHotelPage';
+import { listHotel } from './redux/Hotel/Hotel';
 import ReserveDefault from './components/ReserveDefault';
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchMostRecentHotels());
+    dispatch(listHotel());
   }, []);
 
   return (

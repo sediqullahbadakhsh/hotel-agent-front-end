@@ -230,6 +230,45 @@ ul {
     }
   }
 
+  .rmBtn {
+    position: relative;
+    top: -47%;
+    left: 44%;
+    border-radius: 100%;
+    border-color: #97bf0d;
+    cursor: pointer;
+  }
+
+  .list-heading {
+    margin-top: -50px;
+    align-self: center;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+
+    h1 {
+      font-weight: 700;
+      font-size: 3rem;
+    }
+  }
+
+  .addNewBtn {
+    width: 150px;
+    height: 30px;
+    margin-left: 60px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 5px 5px #86868633;
+    color: $text;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .addNewBtn:hover {
+    box-shadow: 0 0 4px 4px #fff, 0 0 4px 4px $green;
+    color: $green;
+  }
+
   .react-multiple-carousel__arrow {
     min-width: 55px;
   }
@@ -266,8 +305,27 @@ ul {
   }
 }
 
-#logo {
-  margin-bottom: 3rem;
+.center-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+
+  .error-message {
+    font-family: 'Source Sans Pro', sans-serif;
+
+    h1 {
+      font-size: 3em;
+    }
+
+    h2 {
+      font-size: 2em;
+    }
+  }
+
+  #logo {
+    margin-bottom: 3rem;
 
   h1 {
     font-family: 'Yellowtail', cursive;
@@ -417,11 +475,12 @@ ul {
   }
 }
 
+.hotel-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .reserve-container {
-  background-color: $green;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-blend-mode: soft-light;
   margin-left: 170px;
   display: flex;
   flex-direction: column;
@@ -429,7 +488,6 @@ ul {
   align-items: center;
   text-align: center;
   min-height: 100vh;
-  color: white;
 
   .reserve-heading {
     align-self: center;
@@ -438,14 +496,7 @@ ul {
 
     h1 {
       font-weight: 700;
-      font-size: 2.5rem;
-      letter-spacing: 5px;
-      margin-block-end: 0;
-    }
-
-    hr {
-      width: 100%;
-      border: 0.5px solid white;
+      font-size: 3rem;
     }
 
     p {
@@ -604,6 +655,10 @@ ul {
     // font-family: Red Hat Display, sans-serif;
   }
 
+  .hotel-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .hamburguer {
     background: none;
     border: none;
@@ -703,7 +758,7 @@ ul {
 
   .title-container {
     padding: 5rem 0 1rem;
-  
+
     h2 {
       text-align: center;
       font-size: 2em;
@@ -722,5 +777,23 @@ ul {
 
   .reserve-container {
     margin-left: 0;
+  }
+
+  .list-heading {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .hotel-list {
+    grid-template-columns: 1fr;
+  }
+
+  .list-heading {
+    h1 {
+      font-size: 1rem;
+    }
   }
 }
