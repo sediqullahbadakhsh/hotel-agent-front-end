@@ -1,30 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  listHotel,
-  addHotel,
-  viewHotel,
-  deleteHotel,
-} from '../redux/Hotel/Hotel';
+import HotelList from '../components/HotelList';
+import { addHotel, viewHotel, deleteHotel } from '../redux/Hotel/Hotel';
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(listHotel());
-  }, []);
   const { data } = useSelector((state) => state.Hotel);
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <button
-        type="button"
-        className="microphone"
-        label="microphone"
-        onClick={() => dispatch(listHotel())}
-      >
-        List Hotel
-      </button>
-
       <button
         type="button"
         className="microphone"
@@ -49,9 +32,14 @@ const HomePage = () => {
       >
         Delete Hotel
       </button>
-      <div>
-        {data.map((item) => (
-          <p key={item.id}>{item.name}</p>
+
+      <div className="featured-container hotel-list">
+        <div className="featured-heading">
+          <h1>Featured Hotels</h1>
+          <p>Please select a Hotel</p>
+        </div>
+        {data.map((hotel) => (
+          <HotelList hotel={hotel} key={hotel.id} />
         ))}
       </div>
     </div>
