@@ -172,6 +172,28 @@ ul {
   }
 }
 
+.odd {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: $light-gray;
+  color: $text;
+  align-items: center;
+  font-family: 'Source Sans Pro', sans-serif;
+
+  p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+  .views {
+    p {
+      margin-block-start: 0;
+      margin-block-end: 0;
+    }
+  }
+}
+
 // Featured style
 .featured-container {
   margin-left: 170px;
@@ -277,17 +299,20 @@ ul {
     width: 150px;
     height: 30px;
     margin-left: 60px;
-    border: none;
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 0 5px 5px #86868633;
-    color: $text;
+    // color: $text;
     font-size: 1rem;
     font-weight: 600;
+    border: 1.5px solid white;
+    color: white;
+    background-color: $green;
   }
 
   .addNewBtn:hover {
     box-shadow: 0 0 4px 4px #fff, 0 0 4px 4px $green;
+    background-color: white;
     color: $green;
   }
 
@@ -322,36 +347,20 @@ ul {
   }
 
   .ft-card:hover {
+    cursor: pointer;
     box-shadow: 0 0 4px 4px #fff, 0 0 4px 4px $green;
   }
 }
 
-.reserve-container {
-  margin-left: 170px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
+.title-container {
+  padding-top: 5vh;
+  margin: 0 2rem;
 
-  .reserve-heading {
-    align-self: center;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-
-    h1 {
-      font-weight: 700;
-      font-size: 3rem;
-    }
-
-    p {
-      color: $dark-gray;
-      font-size: 1rem;
-      margin-top: -20px;
-    }
-
-    padding-bottom: 30px;
+  h2 {
+    margin-block-start: 0;
+    margin-block-end: 0.3rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: right;
   }
 }
 
@@ -373,116 +382,124 @@ ul {
       font-size: 2em;
     }
   }
+}
 
-  #logo {
-    margin-bottom: 3rem;
+.reserve-container {
+  background-color: $green;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: soft-light;
+  margin-left: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  color: white;
+
+  .reserve-heading {
+    align-self: center;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
 
     h1 {
-      font-family: 'Yellowtail', cursive;
-    }
-  }
-
-  .details-container {
-    display: flex;
-    // align-items: center;
-    justify-content: center;
-  }
-
-  .hotel-images {
-    margin: 2rem;
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 1rem;
-    width: 60%;
-
-    .details-img {
-      width: max-content;
-    }
-  }
-
-  .return-btn {
-    margin-bottom: 2rem;
-    display: flex;
-  }
-
-  .title-container {
-    padding-top: 5vh;
-    margin: 0 2rem;
-
-    h2 {
-      margin-block-start: 0;
-      margin-block-end: 0.3rem;
-      font-family: 'Source Sans Pro', sans-serif;
-      text-align: right;
-    }
-  }
-
-  .hotel-details {
-    margin: 0 2rem;
-    text-align: right;
-  }
-
-  .text-xl {
-    font-size: 1em;
-    margin-block-start: 0;
-    margin-bottom: 2rem;
-    font-family: 'Source Sans Pro', sans-serif;
-  }
-
-  .odd {
-    padding: 0.5rem;
-    display: flex;
-    justify-content: space-between;
-    background-color: $light-gray;
-    color: $text;
-    align-items: center;
-    font-family: 'Source Sans Pro', sans-serif;
-
-    p {
-      margin-block-start: 0;
+      font-weight: 700;
+      font-size: 2.5rem;
+      letter-spacing: 5px;
       margin-block-end: 0;
     }
 
-    .views {
-      p {
-        margin-block-start: 0;
-        margin-block-end: 0;
-      }
+    hr {
+      width: 100%;
+      border: 0.5px solid white;
     }
-  }
 
-  .button-details {
-    padding: 0.5rem 1.25rem;
-    background-color: $green;
-    border: none;
-    border-radius: 15px;
-    color: white;
-    letter-spacing: 0.02em;
-    font-family: 'Lato', sans-serif;
-    font-size: 0.8em;
-    font-weight: 600;
-    cursor: pointer;
-  }
+    p {
+      color: white;
+      font-size: 1.5rem;
+      // font-weight: 200;
+      // margin-top: -20px;
+    }
 
-  .button-details svg {
-    vertical-align: middle;
-    margin-left: 0.2rem;
-    margin-right: 0.3rem;
+    padding-bottom: 1rem;
   }
+}
 
-  .button-return {
-    padding: 0.8rem 1.3rem;
-    background-color: $green;
-    border: none;
-    border-bottom-right-radius: 50px;
-    border-top-right-radius: 50px;
-    color: white;
-    letter-spacing: 0.02em;
-    font-family: 'Lato', sans-serif;
-    font-size: 0.8em;
-    font-weight: 600;
-    cursor: pointer;
+#logo {
+  margin-bottom: 3rem;
+
+  h1 {
+    font-family: 'Yellowtail', cursive;
   }
+}
+
+.details-container {
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+}
+
+.hotel-images {
+  margin: 2rem;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 1rem;
+  width: 60%;
+
+  .details-img {
+    width: max-content;
+  }
+}
+
+.return-btn {
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+.hotel-details {
+  margin: 0 2rem;
+  text-align: right;
+}
+
+.text-xl {
+  font-size: 1em;
+  margin-block-start: 0;
+  margin-bottom: 2rem;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.button-details {
+  padding: 0.5rem 1.25rem;
+  background-color: $green;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  letter-spacing: 0.02em;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button-details svg {
+  vertical-align: middle;
+  margin-left: 0.2rem;
+  margin-right: 0.3rem;
+}
+
+.button-return {
+  padding: 0.8rem 1.3rem;
+  background-color: $green;
+  border: none;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+  color: white;
+  letter-spacing: 0.02em;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .hotel-list {
@@ -490,7 +507,137 @@ ul {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-@media screen and (max-width: 821px) {
+.reserve-form {
+  // ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  //   color: white;
+  //   opacity: 1; /* Firefox */
+  // }
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.countries-container {
+  select {
+    width: 30%;
+    height: 40px;
+    padding: 10px 15px;
+    border: 1.5px solid white;
+    color: white;
+    background-color: $green;
+  }
+}
+
+.date-container {
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+
+  margin: 1rem;
+
+  .date-picker {
+    text-align: center;
+    padding: 0.5rem 1.25rem;
+    background-color: $green;
+    border-radius: 15px;
+    border: 1.5px solid white;
+    color: white;
+    font-size: 0.8em;
+    font-weight: 400;
+    cursor: pointer;
+  }
+}
+
+.options-container {
+  margin: 1rem;
+
+  input {
+    margin: 0.5rem;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 15px;
+    border: 2px solid white;
+    color: $text;
+    font-size: 0.8em;
+    font-weight: 400;
+    cursor: pointer;
+  }
+}
+
+.select-hotel-container {
+  label {
+    margin-right: 1rem;
+    color: white;
+    font-weight: 400;
+  }
+
+  select {
+    width: 20%;
+    height: 40px;
+    padding: 10px 15px;
+    border: 1.5px solid white;
+    color: white;
+    background-color: $green;
+  }
+}
+
+.submit-container {
+  margin: 1rem;
+
+  input {
+    margin: 0.5rem;
+    text-align: center;
+    padding: 0.5rem 1.25rem;
+    background-color: white;
+    border-radius: 15px;
+    border: 2px solid white;
+    color: $green;
+    font-size: 0.8em;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+
+.login-form {
+  margin: 1rem;
+
+  input {
+    text-align: center;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 15px;
+    border: 2px solid white;
+    color: $text;
+    font-size: 0.8em;
+    font-weight: 400;
+    cursor: pointer;
+  }
+}
+
+.login-btn {
+  input {
+    margin: 0.5rem;
+    text-align: center;
+    padding: 0.5rem 1.25rem;
+    background-color: white;
+    border-radius: 15px;
+    border: 2px solid white;
+    color: $green;
+    font-size: 0.8em;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+
+.log-out-btn {
+  border: none;
+  background-color: white;
+  appearance: none;
+  font-size: inherit;
+}
+
+@media screen and (max-width: 769px) {
   .nav-style {
     ul {
       padding-inline-start: 0;

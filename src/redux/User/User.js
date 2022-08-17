@@ -1,7 +1,20 @@
 const CREATE_USER = 'HotelAgentFrontEnd/User/CREATE_USER';
 const LOGIN_USER = 'HotelAgentFrontEnd/User/LOGIN_USER';
+const LOG_OUT = 'HotelAgentFrontEnd/User/LOG_OUT';
 
 const initialState = { status: 'Not created', data: [] };
+
+const setToken = (token, id) => {
+  localStorage.setItem('token', token);
+  localStorage.setItem('userId', id);
+  localStorage.setItem('lastLoginTime', new Date(Date.now()).getTime());
+};
+
+const deleteToken = () => {
+  localStorage.removeItem('userId');
+  localStorage.removeItem('token');
+  localStorage.removeItem('lastLoginTime');
+};
 
 export const success = (user) => ({
   type: CREATE_USER,
@@ -13,10 +26,13 @@ export const loginSuccess = (user) => ({
   user,
 });
 
-const setToken = (token, id) => {
-  localStorage.setItem('token', token);
-  localStorage.setItem('userId', id);
-  localStorage.setItem('lastLoginTime', new Date(Date.now()).getTime());
+export const logoutSuccess = () => ({
+  type: LOG_OUT,
+});
+
+export const logout = () => async (dispatch) => {
+  dispatch(logoutSuccess());
+  deleteToken();
 };
 
 export const createUser = (data) => async (dispatch) => {
@@ -68,6 +84,8 @@ const UserReducer = (state = initialState, action) => {
       return { data: action.user, status: 'Created successfully' };
     case LOGIN_USER:
       return { data: action.user, status: 'Loged In successfully' };
+    case LOG_OUT:
+      return { data: [], status: 'Loged Out successfully' };
     default:
       return state;
   }

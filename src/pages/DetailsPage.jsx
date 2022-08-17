@@ -17,7 +17,6 @@ import { createUser } from '../redux/User/User';
 import 'react-multi-carousel/lib/styles.css';
 
 const DetailsPage = () => {
-  // const { hotel } = prop;
   const { data, status } = useSelector((state) => state.MostRecent);
   const dispatch = useDispatch();
 
@@ -28,7 +27,6 @@ const DetailsPage = () => {
 
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 1,
     },
@@ -49,35 +47,21 @@ const DetailsPage = () => {
   return (
     <div className="App">
       <div className="title-container">
-        <h2>{hotel[0].name.toUpperCase()}</h2>
+        <h2>
+          { hotel[0].name.toUpperCase() }
+        </h2>
       </div>
 
       <div className="details-container">
         <div className="hotel-images">
           <Carousel
             ssr
-            // partialVisbile
-            // deviceType={deviceType}
             itemClass="image-item"
             responsive={responsive}
-            // // partialVisible
-            // // centerMode
-            // swipeable={false}
-            // draggable={false}
-            // showDots
-            // // responsive={responsive}
-            // ssr // means to render carousel on server-side.
-            // infinite
-            // // autoPlay={this.props.deviceType !== 'mobile'}
             autoPlaySpeed={1000}
             keyBoardControl
             customTransition="all .5"
             transitionDuration={500}
-            // containerClass="carousel-container"
-            // removeArrowOnDeviceType={['tablet', 'mobile']}
-            // deviceType={this.props.deviceType}
-            // dotListClass="custom-dot-list-style"
-            // itemClass="carousel-item-padding-40-px"
           >
             <div>
               <img
@@ -116,16 +100,17 @@ const DetailsPage = () => {
               <p>🔖</p>
             </div>
           </div>
-          <p className="text-xl">{hotel[0].description}</p>
-          <button
-            type="button"
-            className="button-details"
-            label="Reserve"
-            onClick={() => dispatch(createUser())}
-          >
-            <BsBookmarkCheckFill />
-            Reserve <FiArrowRightCircle />
-          </button>
+          <p className="text-xl">
+            { hotel[0].description }
+          </p>
+          <Link to={`/reserve/${hotel[0].id}`}>
+            <button type="button" className="button-details" label="Reserve">
+              <BsBookmarkCheckFill />
+              Reserve
+              {' '}
+              <FiArrowRightCircle />
+            </button>
+          </Link>
         </div>
       </div>
       <div className="return-btn">
