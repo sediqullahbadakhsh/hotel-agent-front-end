@@ -7,9 +7,12 @@ const HomePage = () => {
 
   return (
     <div className="featured-container">
-      <div className="featured-heading">
+      <div className="list-heading">
         <h1>Hotel List</h1>
       </div>
+      <button type="button" className="addNewBtn">
+        Add new Hotel
+      </button>
       <div className="hotel-list">
         {data.map((hotel) => (
           <HotelList hotel={hotel} key={hotel.id} />
