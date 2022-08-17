@@ -1,21 +1,22 @@
 /* eslint-disable */
 import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import ReactDatePicker from 'react-datepicker';
+import { addHotelReservation } from '../redux/reservations/reservation';
 import 'react-datepicker/dist/react-datepicker.css';
 import countries from '../components/CountryPicker';
 import background from '../img/background.jpg';
-
+    
 const ReservePage = () => {
-//   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const { register, handleSubmit, control } = useForm({
     defaultValues: {
         user_id: localStorage.getItem('userId'),
     }
   });
   const onSubmit = (data, e) => {
-    console.log(data); //   dispatch(logInUser(data));
+    dispatch(addHotelReservation(data));
     e.target.reset();
 }
 

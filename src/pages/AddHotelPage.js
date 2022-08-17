@@ -8,7 +8,7 @@ import { addHotel } from '../redux/Hotel/Hotel';
 export default function AddHotel() {
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => dispatch(addHotel(data));
+  const onSubmit = (data,e) => {dispatch(addHotel(data)); e.target.reset();}
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)} style = {{float : "right"}}>
