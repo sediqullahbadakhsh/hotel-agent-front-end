@@ -251,6 +251,7 @@ ul {
       padding-bottom: 5px;
     }
   }
+
   .rmBtn {
     position: relative;
     top: -47%;
@@ -259,6 +260,7 @@ ul {
     border-color: #97bf0d;
     cursor: pointer;
   }
+
   .list-heading {
     margin-top: -50px;
     align-self: center;
@@ -270,6 +272,7 @@ ul {
       font-size: 3rem;
     }
   }
+
   .addNewBtn {
     width: 150px;
     height: 30px;
@@ -282,6 +285,7 @@ ul {
     font-size: 1rem;
     font-weight: 600;
   }
+
   .addNewBtn:hover {
     box-shadow: 0 0 4px 4px #fff, 0 0 4px 4px $green;
     color: $green;
@@ -319,6 +323,35 @@ ul {
 
   .ft-card:hover {
     box-shadow: 0 0 4px 4px #fff, 0 0 4px 4px $green;
+  }
+}
+
+.reserve-container {
+  margin-left: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+
+  .reserve-heading {
+    align-self: center;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+
+    h1 {
+      font-weight: 700;
+      font-size: 3rem;
+    }
+
+    p {
+      color: $dark-gray;
+      font-size: 1rem;
+      margin-top: -20px;
+    }
+
+    padding-bottom: 30px;
   }
 }
 
@@ -452,34 +485,6 @@ ul {
   }
 }
 
-.reserve-container {
-  margin-left: 170px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
-
-  .reserve-heading {
-    align-self: center;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-
-    h1 {
-      font-weight: 700;
-      font-size: 3rem;
-    }
-
-    p {
-      color: $dark-gray;
-      font-size: 1rem;
-      margin-top: -20px;
-    }
-
-    padding-bottom: 30px;
-  }
-}
 .hotel-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -506,9 +511,11 @@ ul {
     // background: rgba(33, 33, 33, 0.7);
     // font-family: Red Hat Display, sans-serif;
   }
+
   .hotel-list {
     grid-template-columns: 1fr 1fr;
   }
+
   .hamburguer {
     background: none;
     border: none;
@@ -628,16 +635,19 @@ ul {
   .reserve-container {
     margin-left: 0;
   }
+
   .list-heading {
     h1 {
       font-size: 2rem;
     }
   }
 }
+
 @media screen and (max-width: 415px) {
   .hotel-list {
     grid-template-columns: 1fr;
   }
+
   .list-heading {
     h1 {
       font-size: 1rem;
