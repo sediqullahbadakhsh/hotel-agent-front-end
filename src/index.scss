@@ -150,6 +150,50 @@ ul {
   }
 }
 
+.even {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  color: $text;
+  margin-bottom: 1.5rem;
+  font-family: 'Source Sans Pro', sans-serif;
+
+  h3 {
+    font-size: 1em;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+  p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+}
+
+.odd {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: $light-gray;
+  color: $text;
+  align-items: center;
+  font-family: 'Source Sans Pro', sans-serif;
+
+  p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+  .views {
+    p {
+      margin-block-start: 0;
+      margin-block-end: 0;
+    }
+  }
+}
+
 // Featured style
 .featured-container {
   margin-left: 170px;
@@ -255,7 +299,6 @@ ul {
     width: 150px;
     height: 30px;
     margin-left: 60px;
-    border: none;
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 0 5px 5px #86868633;
@@ -309,75 +352,6 @@ ul {
   }
 }
 
-.center-screen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
-
-  .error-message {
-    font-family: 'Source Sans Pro', sans-serif;
-
-    h1 {
-      font-size: 3em;
-    }
-
-    h2 {
-      font-size: 2em;
-    }
-  }
-}
-
-#logo {
-  margin-bottom: 3rem;
-
-  h1 {
-    font-family: 'Yellowtail', cursive;
-  }
-}
-
-.details-container {
-  display: flex;
-  // align-items: center;
-  justify-content: center;
-}
-
-.hotel-images {
-  margin: 2rem;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 1rem;
-  width: 60%;
-
-  .details-img {
-    width: max-content;
-  }
-}
-
-.details-container {
-  display: flex;
-  // align-items: center;
-  justify-content: center;
-}
-
-.hotel-images {
-  margin: 2rem;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 1rem;
-  width: 60%;
-
-  .details-img {
-    width: max-content;
-  }
-}
-
-.return-btn {
-  margin-bottom: 2rem;
-  display: flex;
-}
-
 .title-container {
   padding-top: 5vh;
   margin: 0 2rem;
@@ -390,95 +364,6 @@ ul {
   }
 }
 
-.hotel-details {
-  margin: 0 2rem;
-  text-align: right;
-}
-
-.text-xl {
-  font-size: 1em;
-  margin-block-start: 0;
-  margin-bottom: 2rem;
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-.odd {
-  padding: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  background-color: $light-gray;
-  color: $text;
-  align-items: center;
-  font-family: 'Source Sans Pro', sans-serif;
-
-  p {
-    margin-block-start: 0;
-    margin-block-end: 0;
-  }
-
-  .views {
-    p {
-      margin-block-start: 0;
-      margin-block-end: 0;
-    }
-  }
-}
-
-.even {
-  padding: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
-  color: $text;
-  margin-bottom: 1.5rem;
-  font-family: 'Source Sans Pro', sans-serif;
-
-  h3 {
-    font-size: 1em;
-    margin-block-start: 0;
-    margin-block-end: 0;
-  }
-
-  p {
-    margin-block-start: 0;
-    margin-block-end: 0;
-  }
-}
-
-.button-details {
-  padding: 0.5rem 1.25rem;
-  background-color: $green;
-  border: none;
-  border-radius: 15px;
-  color: white;
-  letter-spacing: 0.02em;
-  font-family: 'Lato', sans-serif;
-  font-size: 0.8em;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.button-details svg {
-  vertical-align: middle;
-  margin-left: 0.2rem;
-  margin-right: 0.3rem;
-}
-
-.button-return {
-  padding: 0.8rem 1.3rem;
-  background-color: $green;
-  border: none;
-  border-bottom-right-radius: 50px;
-  border-top-right-radius: 50px;
-  color: white;
-  letter-spacing: 0.02em;
-  font-family: 'Lato', sans-serif;
-  font-size: 0.8em;
-  font-weight: 600;
-  cursor: pointer;
-}
-
 .center-screen {
   display: flex;
   justify-content: center;
@@ -497,11 +382,6 @@ ul {
       font-size: 2em;
     }
   }
-}
-
-.hotel-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .reserve-container {
@@ -546,6 +426,87 @@ ul {
   }
 }
 
+#logo {
+  margin-bottom: 3rem;
+
+  h1 {
+    font-family: 'Yellowtail', cursive;
+  }
+}
+
+.details-container {
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+}
+
+.hotel-images {
+  margin: 2rem;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 1rem;
+  width: 60%;
+
+  .details-img {
+    width: max-content;
+  }
+}
+
+.return-btn {
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+.hotel-details {
+  margin: 0 2rem;
+  text-align: right;
+}
+
+.text-xl {
+  font-size: 1em;
+  margin-block-start: 0;
+  margin-bottom: 2rem;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.button-details {
+  padding: 0.5rem 1.25rem;
+  background-color: $green;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  letter-spacing: 0.02em;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button-details svg {
+  vertical-align: middle;
+  margin-left: 0.2rem;
+  margin-right: 0.3rem;
+}
+
+.button-return {
+  padding: 0.8rem 1.3rem;
+  background-color: $green;
+  border: none;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+  color: white;
+  letter-spacing: 0.02em;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hotel-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .reserve-form {
   // ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   //   color: white;
@@ -578,7 +539,6 @@ ul {
     text-align: center;
     padding: 0.5rem 1.25rem;
     background-color: $green;
-    border: none;
     border-radius: 15px;
     border: 1.5px solid white;
     color: white;
@@ -596,7 +556,6 @@ ul {
     text-align: center;
     padding: 0.5rem;
     background-color: white;
-    border: none;
     border-radius: 15px;
     border: 2px solid white;
     color: $text;
@@ -631,7 +590,6 @@ ul {
     text-align: center;
     padding: 0.5rem 1.25rem;
     background-color: white;
-    border: none;
     border-radius: 15px;
     border: 2px solid white;
     color: $green;
@@ -648,7 +606,6 @@ ul {
     text-align: center;
     padding: 0.5rem;
     background-color: white;
-    border: none;
     border-radius: 15px;
     border: 2px solid white;
     color: $text;
@@ -664,7 +621,6 @@ ul {
     text-align: center;
     padding: 0.5rem 1.25rem;
     background-color: white;
-    border: none;
     border-radius: 15px;
     border: 2px solid white;
     color: $green;

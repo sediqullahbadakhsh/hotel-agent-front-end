@@ -1,6 +1,6 @@
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
-import store from '../Redux/configureStore';
+import store from '../redux/configureStore';
 import FeaturedPage from '../pages/FeaturedPage';
 
 it('Check if Featured page renders correctly', () => {
