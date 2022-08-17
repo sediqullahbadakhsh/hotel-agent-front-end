@@ -5,7 +5,6 @@ const DELETE_RESERVATION = 'HotelAgentFrontEnd/Hotel/DELETE_RESERVATION';
 
 const initialState = { status: 'No Data', data: [] };
 
-
 export const addReservation = (reservation) => ({
   type: ADD_RESERVATION,
   reservation,
@@ -64,8 +63,8 @@ export const addHotelReservation = (data) => async (dispatch) => {
 };
 
 export const deleteHotelReservation = () => async (dispatch) => {
-    // attention please
-    // You neeed to spacify reservation id in the link
+  // attention please
+  // You neeed to spacify reservation id in the link
 
   fetch(`http://127.0.0.1:3000/v1/users/${localStorage.getItem('userId')}/reservations/3`, {
     method: 'DELETE',
@@ -90,7 +89,7 @@ const ReservationReducer = (state = initialState, action) => {
       return { data: action.reservation, status: 'Reservation successfully added' };
     case VIEW_RESERVATIONS:
       return { data: action.reservations, status: 'Reservations successfully loaded' };
-    case DELETE_HOTEL:
+    case DELETE_RESERVATION:
       return { data: action.hotel, status: 'Reservation  successfully Deleted' };
     default:
       return state;
