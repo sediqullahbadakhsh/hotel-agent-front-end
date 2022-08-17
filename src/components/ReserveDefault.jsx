@@ -12,7 +12,6 @@ const ReservePage = () => {
   const { data } = useSelector((state) => state.MostRecent);
   let { name } = useParams();
   const hotel = data.filter((hotel) => hotel.id === parseInt(name, 10));
-  console.log(hotel);
   name = name.replace(/_/g, ' ');
 //   const dispatch = useDispatch();
   const { register, handleSubmit, control } = useForm({
@@ -22,10 +21,9 @@ const ReservePage = () => {
     }
   });
   const onSubmit = (data, e) => {
-    console.log(data);
+    console.log(data); //   dispatch(logInUser(data));
     e.target.reset();
 }
-  //   dispatch(logInUser(data));
 
   const countryToFlag = (isoCode) => (typeof String.fromCodePoint !== 'undefined'
     ? isoCode

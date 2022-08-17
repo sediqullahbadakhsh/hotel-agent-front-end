@@ -15,7 +15,6 @@ import { createUser } from '../redux/User/User';
 import 'react-multi-carousel/lib/styles.css';
 
 const DetailsPage = () => {
-  // const { hotel } = prop;
   const { data, status } = useSelector((state) => state.MostRecent);
   const dispatch = useDispatch();
 
@@ -26,7 +25,6 @@ const DetailsPage = () => {
 
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 1,
     },
@@ -56,28 +54,12 @@ const DetailsPage = () => {
         <div className="hotel-images">
           <Carousel
             ssr
-            // partialVisbile
-            // deviceType={deviceType}
             itemClass="image-item"
             responsive={responsive}
-            // // partialVisible
-            // // centerMode
-            // swipeable={false}
-            // draggable={false}
-            // showDots
-            // // responsive={responsive}
-            // ssr // means to render carousel on server-side.
-            // infinite
-            // // autoPlay={this.props.deviceType !== 'mobile'}
             autoPlaySpeed={1000}
             keyBoardControl
             customTransition="all .5"
             transitionDuration={500}
-            // containerClass="carousel-container"
-            // removeArrowOnDeviceType={['tablet', 'mobile']}
-            // deviceType={this.props.deviceType}
-            // dotListClass="custom-dot-list-style"
-            // itemClass="carousel-item-padding-40-px"
           >
             <div><img src={hotel[0].image[0]} alt="hotel" className="details-img" /></div>
             <div>

@@ -15,10 +15,10 @@ const ReservePage = () => {
     }
   });
   const onSubmit = (data, e) => {
-    console.log(data);
+    console.log(data); //   dispatch(logInUser(data));
     e.target.reset();
 }
-  //   dispatch(logInUser(data));
+
   const { data } = useSelector((state) => state.MostRecent);
 
   const countryToFlag = (isoCode) => (typeof String.fromCodePoint !== 'undefined'

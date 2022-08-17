@@ -2,7 +2,6 @@ import './App.scss';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import HomePage from './pages/HomePage';
 import NavBar from './components/Navbar';
 import { fetchMostRecentHotels } from './redux/MostRecent/MostRecent';
 import SignUp from './components/SignUp';
@@ -26,7 +25,6 @@ const App = () => {
     <Router>
       <NavBar />
       <Routes>
-        {/* <Route path="/" element={<HomePage />} /> */}
         <Route path="/" element={<FeaturedPage />} />
         <Route path="/reserve" element={<ReservePage />} />
         <Route path="/reserve/:name" element={<ReserveDefault />} />
