@@ -1,10 +1,13 @@
 // import { NavHashLink } from 'react-router-hash-link';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { AiOutlineMenu, AiFillCloseCircle } from 'react-icons/ai';
 import React, { useState } from 'react';
 import Social from './Social';
+import { logout } from '../redux/User/User';
 
 const Navbar = () => {
+  const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
 
   const displayMenu = () => {
@@ -15,6 +18,14 @@ const Navbar = () => {
   };
 
   const handleClick = () => {
+    if (window.innerWidth < 769 && showMenu === true) {
+      setShowMenu(!showMenu);
+      document.body.classList.toggle('hidden');
+    }
+  };
+
+  const handleClickLogOut = () => {
+    dispatch(logout());
     if (window.innerWidth < 769 && showMenu === true) {
       setShowMenu(!showMenu);
       document.body.classList.toggle('hidden');
@@ -60,8 +71,22 @@ const Navbar = () => {
             FEATURED HOTELS
           </NavLink>
         </li>
-
         <li className="menu-item" key={2}>
+          <NavLink
+            className="nav-link-style"
+            onClick={handleClick}
+            style={({ isActive }) => ({
+              display: 'block',
+              textDecoration: 'none',
+              color: isActive ? 'white' : '#27363f',
+              backgroundColor: isActive ? '#97bf0d' : 'white',
+            })}
+            to="/hotel"
+          >
+            HOTELS
+          </NavLink>
+        </li>
+        <li className="menu-item" key={3}>
           <NavLink
             className="nav-link-style"
             onClick={handleClick}
@@ -76,7 +101,7 @@ const Navbar = () => {
             RESERVE
           </NavLink>
         </li>
-        <li className="menu-item" key={3}>
+        <li className="menu-item" key={4}>
           <NavLink
             className="nav-link-style"
             onClick={handleClick}
@@ -91,7 +116,7 @@ const Navbar = () => {
             RESERVATIONS
           </NavLink>
         </li>
-        <li className="menu-item" key={4}>
+        <li className="menu-item" key={5}>
           <NavLink
             className="nav-link-style"
             onClick={handleClick}
@@ -106,7 +131,7 @@ const Navbar = () => {
             LOG IN
           </NavLink>
         </li>
-        <li className="menu-item" key={5}>
+        <li className="menu-item" key={6}>
           <NavLink
             className="nav-link-style"
             onClick={handleClick}
@@ -121,20 +146,17 @@ const Navbar = () => {
             SIGN UP
           </NavLink>
         </li>
-        <li className="menu-item" key={6}>
-          <NavLink
-            className="nav-link-style"
-            onClick={handleClick}
-            style={({ isActive }) => ({
-              display: 'block',
-              textDecoration: 'none',
-              color: isActive ? 'white' : '#27363f',
-              backgroundColor: isActive ? '#97bf0d' : 'white',
-            })}
-            to=""
-          >
-            LOG OUT
-          </NavLink>
+        <li className="menu-item" key={7}>
+          <Link to="/">
+            <button
+              type="button"
+              className="nav-link-style log-out-btn"
+              label="Reserve"
+              onClick={handleClickLogOut}
+            >
+              LOG OUT
+            </button>
+          </Link>
         </li>
       </ul>
       <div className="social-menu">

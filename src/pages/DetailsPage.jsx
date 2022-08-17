@@ -104,7 +104,7 @@ const DetailsPage = () => {
             { hotel[0].description }
           </p>
           <Link to={`/reserve/${hotel[0].id}`}>
-            <button type="button" className="button-details" label="Reserve" onClick={() => dispatch(createUser())}>
+            <button type="button" className="button-details" label="Reserve">
               <BsBookmarkCheckFill />
               Reserve
               {' '}
