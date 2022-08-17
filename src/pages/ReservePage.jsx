@@ -9,7 +9,11 @@ import background from '../img/background.jpg';
 
 const ReservePage = () => {
 //   const dispatch = useDispatch();
-  const { register, handleSubmit, control } = useForm();
+  const { register, handleSubmit, control } = useForm({
+    defaultValues: {
+        user_id: localStorage.getItem('userId'),
+    }
+  });
   const onSubmit = (data, e) => {
     console.log(data);
     e.target.reset();
