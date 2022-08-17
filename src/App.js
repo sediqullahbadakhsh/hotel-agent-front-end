@@ -14,6 +14,7 @@ import ReservePage from './pages/ReservePage';
 import AddHotel from './pages/AddHotelPage';
 import { listHotel } from './redux/Hotel/Hotel';
 import ReserveDefault from './components/ReserveDefault';
+import ReservationsPage from './pages/ReservationsPage';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="/hotel/:name" element={<DetailsPage />} />
         <Route path="/add-hotel" element={<AddHotel />} />
         <Route path="*" element={<ErrorPage />} />
+        <Route path="/reservations" element={<ReservationsPage />} />
       </Routes>
     </Router>
   );

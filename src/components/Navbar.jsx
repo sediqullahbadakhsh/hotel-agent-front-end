@@ -129,7 +129,7 @@ const Navbar = () => {
               color: isActive ? 'white' : '#27363f',
               backgroundColor: isActive ? '#97bf0d' : 'white',
             })}
-            to="/log-in"
+            to="/reservations"
           >
             LOG IN
           </NavLink>
