@@ -1,5 +1,5 @@
 // import { NavHashLink } from 'react-router-hash-link';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { AiOutlineMenu, AiFillCloseCircle } from 'react-icons/ai';
 import React, { useState } from 'react';
@@ -8,6 +8,7 @@ import { logout } from '../redux/User/User';
 
 const Navbar = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
 
   const displayMenu = () => {
@@ -27,6 +28,7 @@ const Navbar = () => {
   const handleClickLogOut = () => {
     // eslint-disable-next-line no-unused-expressions
     dispatch(logout()) ? window.location.reload() : null;
+    navigate('/log-in');
     if (window.innerWidth < 769 && showMenu === true) {
       setShowMenu(!showMenu);
       document.body.classList.toggle('hidden');

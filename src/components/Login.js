@@ -3,13 +3,15 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { logInUser } from '../redux/User/User';
+import { useNavigate } from 'react-router-dom';
 import auth from '../img/authentication.jpg';
 
 export default function Login() {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    dispatch(logInUser(data));
+    dispatch(logInUser(data))? navigate('/') : null;
   };
 
   return (
