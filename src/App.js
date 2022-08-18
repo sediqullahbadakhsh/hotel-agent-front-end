@@ -15,6 +15,7 @@ import AddHotel from './pages/AddHotelPage';
 import { listHotel } from './redux/Hotel/Hotel';
 import ReserveDefault from './components/ReserveDefault';
 import ReservationsPage from './pages/ReservationsPage';
+import { listReservations } from './redux/Reservations/Reservation';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const App = () => {
   useEffect(() => {
     dispatch(fetchMostRecentHotels());
     dispatch(listHotel());
+    dispatch(listReservations());
   }, []);
 
   return (
