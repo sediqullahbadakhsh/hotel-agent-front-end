@@ -67,6 +67,9 @@ export const addHotelReservation = (data) => async (dispatch) => {
     .then((data) => {
       dispatch(addReservation(data));
     })
+    .then(() => {
+      dispatch(listReservations());
+    })
     .catch((error) => {
       throw error;
     });
@@ -89,6 +92,9 @@ export const deleteHotelReservation = (id) => async (dispatch) => {
     .then((data) => data.json())
     .then((data) => {
       dispatch(deleteReservation(data));
+    })
+    .then(() => {
+      dispatch(listReservations());
     })
     .catch((error) => {
       throw error;

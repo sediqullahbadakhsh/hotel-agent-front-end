@@ -25,11 +25,7 @@ const ReservationList = ({ reservation }) => {
       <button
         type="button"
         className="cancel-reservation"
-        onClick={() =>
-          dispatch(deleteHotelReservation(reservation.id))
-            ? window.location.reload()
-            : null
-        }
+        onClick={() => dispatch(deleteHotelReservation(reservation.id))}
       >
         Cancel Reservation
       </button>
