@@ -13,7 +13,7 @@ const ReservationList = ({ reservation }) => {
       <div className="reservation-card">
         <div className="card-top">
           <h2>{hotel[0].name}</h2>
-          <h3>{reservation.city}</h3>
+          <h4>{reservation.city}</h4>
         </div>
         <div className="card-bottom">
           <p>Date: {reservation.date}</p>
