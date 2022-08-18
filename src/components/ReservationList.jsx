@@ -10,12 +10,16 @@ const ReservationList = ({ reservation }) => {
 
   return (
     <div className="reservation-item">
-      <h3>{hotel[0].name}</h3>
-      <h3>{reservation.city}</h3>
-      <h3>{reservation.date}</h3>
-      <h3>{reservation.number_of_days}</h3>
-      <h3>{reservation.number_of_guests}</h3>
-      <h3>{reservation.number_of_rooms}</h3>
+      <div className="card-top">
+        <h3>{hotel[0].name}</h3>
+        <h3>{reservation.city}</h3>
+      </div>
+      <div className="card-bottom">
+        <p>Date: {reservation.date}</p>
+        <p>Number of Days: {reservation.number_of_days}</p>
+        <p>Number of Guests: {reservation.number_of_guests}</p>
+        <p>Number of Rooms: {reservation.number_of_rooms}</p>
+      </div>
       <button
         type="button"
         onClick={() =>
