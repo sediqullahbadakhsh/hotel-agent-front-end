@@ -4,7 +4,7 @@ import logger from 'redux-logger';
 import mostRecentReducer from './MostRecent/MostRecent';
 import UserReducer from './User/User';
 import HotelReducer from './Hotel/Hotel';
-import ReservationReducer from './reservations/reservation';
+import ReservationReducer from './Reservations/Reservation';
 
 const rootReducer = combineReducers({
   MostRecent: mostRecentReducer,
