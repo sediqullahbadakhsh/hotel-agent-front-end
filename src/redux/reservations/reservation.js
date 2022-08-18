@@ -21,7 +21,7 @@ export const deleteReservation = (reservation) => ({
 export const listReservations = () => async (dispatch) => {
   fetch(
     `http://localhost:3000/v1/users/${localStorage.getItem(
-      'userId'
+      'userId',
     )}/reservations`,
     {
       method: 'GET',
@@ -30,7 +30,7 @@ export const listReservations = () => async (dispatch) => {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
-    }
+    },
   )
     .then((data) => data.json())
     .then((data) => {
@@ -44,7 +44,7 @@ export const listReservations = () => async (dispatch) => {
 export const addHotelReservation = (data) => async (dispatch) => {
   fetch(
     `http://127.0.0.1:3000/v1/users/${localStorage.getItem(
-      'userId'
+      'userId',
     )}/reservations`,
     {
       method: 'POST',
@@ -61,7 +61,7 @@ export const addHotelReservation = (data) => async (dispatch) => {
         number_of_guests: data.number_of_guests,
         hotel_id: parseInt(data.hotel_id, 10),
       }),
-    }
+    },
   )
     .then((data) => data.json())
     .then((data) => {
@@ -75,7 +75,7 @@ export const addHotelReservation = (data) => async (dispatch) => {
 export const deleteHotelReservation = (id) => async (dispatch) => {
   fetch(
     `http://127.0.0.1:3000/v1/users/${localStorage.getItem(
-      'userId'
+      'userId',
     )}/reservations/${id}`,
     {
       method: 'DELETE',
@@ -84,7 +84,7 @@ export const deleteHotelReservation = (id) => async (dispatch) => {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
-    }
+    },
   )
     .then((data) => data.json())
     .then((data) => {
