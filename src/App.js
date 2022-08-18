@@ -14,6 +14,8 @@ import ReservePage from './pages/ReservePage';
 import AddHotel from './pages/AddHotelPage';
 import { listHotel } from './redux/Hotel/Hotel';
 import ReserveDefault from './components/ReserveDefault';
+import DetailsHotelLog from './components/DetailsHotelLog';
+import ReserveDefaultLog from './components/ReserveDefaultLog';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -30,10 +32,12 @@ const App = () => {
         <Route path="/" element={<FeaturedPage />} />
         <Route path="/reserve" element={<ReservePage />} />
         <Route path="/reserve/:name" element={<ReserveDefault />} />
+        <Route path="/reserve/log/:name" element={<ReserveDefaultLog />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/log-in" element={<Login />} />
         <Route path="/hotel" element={<HotelPage />} />
         <Route path="/hotel/:name" element={<DetailsPage />} />
+        <Route path="/hotel/log/:name" element={<DetailsHotelLog />} />
         <Route path="/add-hotel" element={<AddHotel />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

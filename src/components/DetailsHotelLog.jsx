@@ -11,7 +11,7 @@ import { createUser } from '../redux/User/User';
 import 'react-multi-carousel/lib/styles.css';
 
 const DetailsPage = () => {
-  const { data } = useSelector((state) => state.MostRecent);
+  const { data } = useSelector((state) => state.Hotel);
 
   let { name } = useParams();
   const hotel = data.filter((hotel) => hotel.id === parseInt(name, 10));
@@ -95,7 +95,7 @@ const DetailsPage = () => {
           <p className="text-xl">
             { hotel[0].description }
           </p>
-          <Link to={`/reserve/${hotel[0].id}`}>
+          <Link to={`/reserve/log/${hotel[0].id}`}>
             <button type="button" className="button-details" label="Reserve">
               <BsBookmarkCheckFill />
               Reserve

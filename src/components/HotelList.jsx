@@ -32,13 +32,13 @@ const HotelList = ({ hotel }) => {
         type="button"
         className="rmBtn"
         onClick={() =>
-          dispatch(deleteHotel(hotel.id)) ? window.location.reload() : null
+          dispatch(deleteHotel(hotel.id))
         }
         /* eslint-enable */
       >
         <AiOutlineDelete style={btnStyle} />
       </button>
-      <Link to={`/hotel/${hotel.id}`}>
+      <Link to={`/hotel/log/${hotel.id}`}>
         <p className="card-title">{hotel.name}</p>
       </Link>
       <p className="line">-----------------------</p>

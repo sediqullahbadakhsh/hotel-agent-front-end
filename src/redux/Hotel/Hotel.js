@@ -1,3 +1,5 @@
+import { fetchMostRecentHotels } from '../MostRecent/MostRecent';
+
 const LIST_HOTEL = 'HotelAgentFrontEnd/Hotel/LIST_HOTEL';
 const ADD_HOTEL = 'HotelAgentFrontEnd/Hotel/ADD_HOTEL';
 const VIEW_HOTEL = 'HotelAgentFrontEnd/Hotel/VIEW_HOTEL';
@@ -66,6 +68,10 @@ export const addHotel = (data) => async (dispatch) => {
     .then((data) => {
       dispatch(addHotelSucces(data));
     })
+    .then(() => {
+      dispatch(fetchMostRecentHotels());
+      dispatch(listHotel());
+    })
     .catch((error) => {
       throw error;
     });
@@ -104,6 +110,10 @@ export const deleteHotel = (hotel) => async (dispatch) => {
     .then((data) => data.json())
     .then((data) => {
       dispatch(deleteHotelSucces(data));
+    })
+    .then(() => {
+      dispatch(fetchMostRecentHotels());
+      dispatch(listHotel());
     })
     .catch((error) => {
       throw error;

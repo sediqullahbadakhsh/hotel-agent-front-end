@@ -5,13 +5,14 @@ import { useDispatch } from 'react-redux';
 import { logInUser } from '../redux/User/User';
 import { useNavigate } from 'react-router-dom';
 import auth from '../img/authentication.jpg';
+import { listHotel } from '../redux/Hotel/Hotel';
 
 export default function Login() {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    dispatch(logInUser(data))? navigate('/') : null;
+    dispatch(logInUser(data)) ? (navigate('/')) : null;
   };
 
   return (

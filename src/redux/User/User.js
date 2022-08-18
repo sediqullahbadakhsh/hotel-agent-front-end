@@ -1,3 +1,5 @@
+import { listHotel } from '../Hotel/Hotel';
+
 const CREATE_USER = 'HotelAgentFrontEnd/User/CREATE_USER';
 const LOGIN_USER = 'HotelAgentFrontEnd/User/LOGIN_USER';
 const LOG_OUT = 'HotelAgentFrontEnd/User/LOG_OUT';
@@ -11,9 +13,9 @@ const setToken = (token, id) => {
 };
 
 const deleteToken = () => {
-  localStorage.removeItem('userId');
-  localStorage.removeItem('token');
-  localStorage.removeItem('lastLoginTime');
+  localStorage.setItem('userId', null);
+  localStorage.setItem('token', null);
+  localStorage.setItem('lastLoginTime', null);
 };
 
 export const success = (user) => ({
@@ -74,6 +76,9 @@ export const logInUser = (data) => async (dispatch) => {
     .then((res) => {
       dispatch(loginSuccess(res));
       setToken(res.content.auth_token, res.user_id);
+    })
+    .then(() => {
+      dispatch(listHotel());
     })
     .catch((error) => { throw error; });
 };
