@@ -528,7 +528,8 @@ ul {
 }
 
 .date-container {
-  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white;
     opacity: 1; /* Firefox */
   }
@@ -635,6 +636,56 @@ ul {
   background-color: white;
   appearance: none;
   font-size: inherit;
+}
+//Reservation page
+.reservation-container {
+  margin-left: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-top: 10px;
+
+  .reservation-heading {
+    align-self: center;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+
+    h1 {
+      font-weight: 700;
+      font-size: 3rem;
+    }
+  }
+  .reservation-item {
+    p {
+      color: $dark-gray;
+      font-size: 1rem;
+      margin-top: -20px;
+    }
+    .ft-card {
+      background-color: rgba(185, 184, 184, 0.13);
+      padding: 5px;
+      margin: 30px 50px;
+      border-radius: 3%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 5px 5px #86868633;
+
+      .img-container {
+        width: 100%;
+        height: 200px;
+
+        .carousel-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 769px) {
