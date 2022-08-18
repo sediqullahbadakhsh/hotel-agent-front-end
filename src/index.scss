@@ -347,7 +347,6 @@ ul {
   }
 
   .ft-card:hover {
-    cursor: pointer;
     box-shadow: 0 0 4px 4px #fff, 0 0 4px 4px $green;
   }
 }
@@ -656,34 +655,38 @@ ul {
       font-size: 3rem;
     }
   }
-  .reservation-item {
-    p {
-      color: $dark-gray;
-      font-size: 1rem;
-      margin-top: -20px;
-    }
-    .ft-card {
+  .res-card {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    align-items: center;
+    .reservation-card {
+      padding: 0 10px;
       background-color: rgba(185, 184, 184, 0.13);
-      padding: 5px;
-      margin: 30px 50px;
-      border-radius: 3%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      margin: 20px;
+      border-radius: 10px;
       box-shadow: 0 0 5px 5px #86868633;
 
-      .img-container {
-        width: 100%;
-        height: 200px;
-
-        .carousel-image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 5px;
-        }
+      p {
+        color: $dark-gray;
+        font-size: 1rem;
+        margin-top: -20px;
       }
+      .card-top {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+      }
+      .card-bottom {
+        padding-top: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .cancel-reservation {
+      height: 60px;
+      margin-right: 30px;
+    }
+    .reservation-card:hover {
+      box-shadow: 0 0 4px 4px #fff, 0 0 4px 4px $green;
     }
   }
 }

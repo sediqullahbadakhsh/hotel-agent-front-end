@@ -9,19 +9,22 @@ const ReservationList = ({ reservation }) => {
   const hotel = data.filter((hotel) => hotel.id === reservation.hotel_id);
 
   return (
-    <div className="reservation-item">
-      <div className="card-top">
-        <h3>{hotel[0].name}</h3>
-        <h3>{reservation.city}</h3>
-      </div>
-      <div className="card-bottom">
-        <p>Date: {reservation.date}</p>
-        <p>Number of Days: {reservation.number_of_days}</p>
-        <p>Number of Guests: {reservation.number_of_guests}</p>
-        <p>Number of Rooms: {reservation.number_of_rooms}</p>
+    <div className="res-card">
+      <div className="reservation-card">
+        <div className="card-top">
+          <h3>{hotel[0].name}</h3>
+          <h3>{reservation.city}</h3>
+        </div>
+        <div className="card-bottom">
+          <p>Date: {reservation.date}</p>
+          <p>Number of Days: {reservation.number_of_days}</p>
+          <p>Number of Guests: {reservation.number_of_guests}</p>
+          <p>Number of Rooms: {reservation.number_of_rooms}</p>
+        </div>
       </div>
       <button
         type="button"
+        className="cancel-reservation"
         onClick={() =>
           dispatch(deleteHotelReservation(reservation.id))
             ? window.location.reload()
