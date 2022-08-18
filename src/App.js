@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/Navbar';
 import { fetchMostRecentHotels } from './redux/MostRecent/MostRecent';
+import { listReservations } from './redux/reservations/reservation';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
 import HotelPage from './pages/HotelPage';
@@ -16,6 +17,7 @@ import { listHotel } from './redux/Hotel/Hotel';
 import ReserveDefault from './components/ReserveDefault';
 import DetailsHotelLog from './components/DetailsHotelLog';
 import ReserveDefaultLog from './components/ReserveDefaultLog';
+import ReservationsPage from './pages/ReservationsPage';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -23,6 +25,7 @@ const App = () => {
   useEffect(() => {
     dispatch(fetchMostRecentHotels());
     dispatch(listHotel());
+    dispatch(listReservations());
   }, []);
 
   return (
@@ -40,6 +43,7 @@ const App = () => {
         <Route path="/hotel/log/:name" element={<DetailsHotelLog />} />
         <Route path="/add-hotel" element={<AddHotel />} />
         <Route path="*" element={<ErrorPage />} />
+        <Route path="/reservations" element={<ReservationsPage />} />
       </Routes>
     </Router>
   );
