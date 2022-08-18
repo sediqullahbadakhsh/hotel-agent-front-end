@@ -12,7 +12,7 @@ const ReservationList = ({ reservation }) => {
     <div className="res-card">
       <div className="reservation-card">
         <div className="card-top">
-          <h3>{hotel[0].name}</h3>
+          <h2>{hotel[0].name}</h2>
           <h3>{reservation.city}</h3>
         </div>
         <div className="card-bottom">
