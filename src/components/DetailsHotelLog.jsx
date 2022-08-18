@@ -11,7 +11,7 @@ import { createUser } from '../redux/User/User';
 import 'react-multi-carousel/lib/styles.css';
 
 const DetailsPage = () => {
-  const { data } = useSelector((state) => state.MostRecent);
+  const { data } = useSelector((state) => state.Hotel);
 
   let { name } = useParams();
   const hotel = data.filter((hotel) => hotel.id === parseInt(name, 10));
@@ -39,7 +39,9 @@ const DetailsPage = () => {
   return (
     <div className="App">
       <div className="title-container">
-        <h2>{hotel[0].name.toUpperCase()}</h2>
+        <h2>
+          { hotel[0].name.toUpperCase() }
+        </h2>
       </div>
 
       <div className="details-container">
@@ -90,11 +92,15 @@ const DetailsPage = () => {
               <p>🔖</p>
             </div>
           </div>
-          <p className="text-xl">{hotel[0].description}</p>
-          <Link to={`/reserve/${hotel[0].id}`}>
+          <p className="text-xl">
+            { hotel[0].description }
+          </p>
+          <Link to={`/reserve/log/${hotel[0].id}`}>
             <button type="button" className="button-details" label="Reserve">
               <BsBookmarkCheckFill />
-              Reserve <FiArrowRightCircle />
+              Reserve
+              {' '}
+              <FiArrowRightCircle />
             </button>
           </Link>
         </div>
