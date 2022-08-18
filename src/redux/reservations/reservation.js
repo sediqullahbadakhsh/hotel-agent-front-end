@@ -93,9 +93,6 @@ export const deleteHotelReservation = (id) => async (dispatch) => {
     .then((data) => {
       dispatch(deleteReservation(data));
     })
-    .then(() => {
-      dispatch(listReservations());
-    })
     .catch((error) => {
       throw error;
     });
