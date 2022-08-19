@@ -1,12 +1,14 @@
 // import { NavHashLink } from 'react-router-hash-link';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { AiOutlineMenu, AiFillCloseCircle } from 'react-icons/ai';
 import React, { useState } from 'react';
 import Social from './Social';
 import { logout } from '../redux/User/User';
 
 const Navbar = () => {
+  const { status } = useSelector((state) => state.User);
+  console.log(status);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
@@ -44,8 +46,9 @@ const Navbar = () => {
     color: '$text',
   };
 
-  return (
-    <nav className="nav-style">
+ if (status == "Loged In successfully") {
+    return (
+      <nav className="nav-style">
       <div id="logo" style={logoStyle}>
         <span id="logo-img" />
         <h1 id="logo-text">Hotel Agent</h1>
@@ -121,7 +124,7 @@ const Navbar = () => {
             RESERVATIONS
           </NavLink>
         </li>
-        <li className="menu-item" key={5}>
+        {/* <li className="menu-item" key={5}>
           <NavLink
             className="nav-link-style"
             onClick={handleClick}
@@ -150,7 +153,7 @@ const Navbar = () => {
           >
             SIGN UP
           </NavLink>
-        </li>
+        </li> */}
         <li className="menu-item" key={7}>
           <Link to="/">
             <button
@@ -171,7 +174,7 @@ const Navbar = () => {
         <p>&copy; 2022 All rights reserved</p>
       </div>
     </nav>
-  );
+    );
 };
-
+}
 export default Navbar;
