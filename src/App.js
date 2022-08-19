@@ -66,6 +66,7 @@ const App = () => {
       <LogOutNavBar />
       <Routes>
         <Route path="/" element={<FeaturedPage />} />
+        <Route path="/hotel/:name" element={<DetailsPage />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/log-in" element={<Login />} />
         <Route path="*" element={<ErrorPage />} />

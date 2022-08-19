@@ -91,12 +91,14 @@ const DetailsPage = () => {
             </div>
           </div>
           <p className="text-xl">{hotel[0].description}</p>
+          { localStorage.getItem('userId') !== 'null' && (
           <Link to={`/reserve/${hotel[0].id}`}>
             <button type="button" className="button-details" label="Reserve">
               <BsBookmarkCheckFill />
               Reserve <FiArrowRightCircle />
             </button>
           </Link>
+          )}
         </div>
       </div>
       <div className="return-btn">

@@ -1,13 +1,11 @@
 import { NavLink, Link, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { AiOutlineMenu, AiFillCloseCircle } from 'react-icons/ai';
 import React, { useState } from 'react';
 import Social from './Social';
 import { logout } from '../redux/User/User';
 
 const Navbar = () => {
-  const { status } = useSelector((state) => state.User);
-  console.log(status);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
