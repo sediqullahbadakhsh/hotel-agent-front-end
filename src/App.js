@@ -27,7 +27,6 @@ const App = () => {
 
   const getSatus = async () => {
     status = useSelector((state) => state.Hotel);
-    console.log(status);
   };
   useEffect(() => {
     const getData = async () => {

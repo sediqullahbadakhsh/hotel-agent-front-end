@@ -10,8 +10,9 @@ export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { register,formState: { errors }, handleSubmit } = useForm();
-  const onSubmit = (data) => {
+  const onSubmit =  (data) => {
     dispatch(logInUser(data)) ? (navigate('/')) : null;
+
   };
 
   return (
@@ -26,10 +27,15 @@ export default function Login() {
         <hr />
         <p>Sign in to continue</p>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)} style={{ float: 'right' }}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="login-form">
-          <input {...register('email', {pattern: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i})} required placeholder="✉️  email" />
-          {errors.email && <p>email is not Valid</p>}
+          <input {...register('email',{
+          required: "Emai address is required",
+          pattern: {
+            value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+            message: "Invalid email address"}
+          })}  placeholder="✉️  email" />
+          {errors.email && <p>{errors.email.message}</p>}
         </div>
         <div className="login-form">
           <input {...register('password')} required minLength={6} placeholder="🔒  password" />
