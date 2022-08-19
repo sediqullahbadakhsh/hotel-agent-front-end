@@ -1,4 +1,3 @@
-// import { NavHashLink } from 'react-router-hash-link';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { AiOutlineMenu, AiFillCloseCircle } from 'react-icons/ai';
@@ -46,7 +45,6 @@ const Navbar = () => {
     color: '$text',
   };
 
- if (status == "Loged In successfully") {
     return (
       <nav className="nav-style">
       <div id="logo" style={logoStyle}>
@@ -124,36 +122,6 @@ const Navbar = () => {
             RESERVATIONS
           </NavLink>
         </li>
-        {/* <li className="menu-item" key={5}>
-          <NavLink
-            className="nav-link-style"
-            onClick={handleClick}
-            style={({ isActive }) => ({
-              display: 'block',
-              textDecoration: 'none',
-              color: isActive ? 'white' : '#27363f',
-              backgroundColor: isActive ? '#97bf0d' : 'white',
-            })}
-            to="/log-in"
-          >
-            LOG IN
-          </NavLink>
-        </li>
-        <li className="menu-item" key={6}>
-          <NavLink
-            className="nav-link-style"
-            onClick={handleClick}
-            style={({ isActive }) => ({
-              display: 'block',
-              textDecoration: 'none',
-              color: isActive ? 'white' : '#27363f',
-              backgroundColor: isActive ? '#97bf0d' : 'white',
-            })}
-            to="/sign-up"
-          >
-            SIGN UP
-          </NavLink>
-        </li> */}
         <li className="menu-item" key={7}>
           <Link to="/">
             <button
@@ -176,5 +144,5 @@ const Navbar = () => {
     </nav>
     );
 };
-}
+
 export default Navbar;
