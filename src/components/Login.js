@@ -5,14 +5,14 @@ import { useDispatch } from 'react-redux';
 import { logInUser } from '../redux/User/User';
 import { useNavigate } from 'react-router-dom';
 import auth from '../img/authentication.jpg';
-import { listHotel } from '../redux/Hotel/Hotel';
 
 export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {
+  const { register,formState: { errors }, handleSubmit } = useForm();
+  const onSubmit =  (data) => {
     dispatch(logInUser(data)) ? (navigate('/')) : null;
+
   };
 
   return (
@@ -27,12 +27,18 @@ export default function Login() {
         <hr />
         <p>Sign in to continue</p>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)} style={{ float: 'right' }}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="login-form">
-          <input {...register('email')} placeholder="✉️  email" />
+          <input {...register('email',{
+          required: "Emai address is required",
+          pattern: {
+            value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+            message: "Invalid email address"}
+          })}  placeholder="✉️  email" />
+          {errors.email && <p>{errors.email.message}</p>}
         </div>
         <div className="login-form">
-          <input {...register('password')} placeholder="🔒  password" />
+          <input {...register('password')} type={'password'} required minLength={6} placeholder="🔒  password" />
         </div>
         <div className="login-btn">
           <input type="submit" value="SIGN IN" />
