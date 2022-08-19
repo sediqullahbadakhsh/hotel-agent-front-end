@@ -2,7 +2,8 @@
 import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { addHotelReservation } from '../redux/reservations/reservation';
 import ReactDatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import countries from '../components/CountryPicker';
@@ -13,7 +14,7 @@ const ReservePage = () => {
   let { name } = useParams();
   const hotel = data.filter((hotel) => hotel.id === parseInt(name, 10));
   name = name.replace(/_/g, ' ');
-//   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const { register, handleSubmit, control } = useForm({
     defaultValues: {
         user_id: localStorage.getItem('userId'),
@@ -21,7 +22,7 @@ const ReservePage = () => {
     }
   });
   const onSubmit = (data, e) => {
-    console.log(data); //   dispatch(logInUser(data));
+    dispatch(addHotelReservation(data));
     e.target.reset();
 }
 

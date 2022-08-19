@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { deleteHotelReservation } from '../redux/reservations/reservation';
 
 const ReservationList = ({ reservation }) => {
-  const { data } = useSelector((state) => state.MostRecent);
+  const { data } = useSelector((state) => state.Hotel);
   const dispatch = useDispatch();
   const hotel = data.filter((hotel) => hotel.id === reservation.hotel_id);
 

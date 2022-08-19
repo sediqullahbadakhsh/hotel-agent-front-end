@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { RiFacebookCircleLine, RiInstagramLine } from 'react-icons/ri';
 import { TiSocialTwitterCircular } from 'react-icons/ti';
 import { AiOutlineDelete } from 'react-icons/ai';
+import PropTypes from 'prop-types';
 import { deleteHotel } from '../redux/Hotel/Hotel';
 
 const HotelList = ({ hotel }) => {
@@ -61,3 +62,12 @@ const HotelList = ({ hotel }) => {
 };
 
 export default HotelList;
+
+HotelList.propTypes = {
+  hotel: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  }).isRequired,
+};

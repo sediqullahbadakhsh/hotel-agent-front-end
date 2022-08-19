@@ -45,8 +45,8 @@ const Navbar = () => {
     color: '$text',
   };
 
-    return (
-      <nav className="nav-style">
+  return (
+    <nav className="nav-style">
       <div id="logo" style={logoStyle}>
         <span id="logo-img" />
         <h1 id="logo-text">Hotel Agent</h1>
@@ -142,7 +142,7 @@ const Navbar = () => {
         <p>&copy; 2022 All rights reserved</p>
       </div>
     </nav>
-    );
+  );
 };
 
 export default Navbar;
