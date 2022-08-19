@@ -34,7 +34,7 @@ export default function SignUp() {
           {errors.email && <p>{errors.email.message}</p>}
         </div>
         <div className="login-form">
-          <input {...register('password')}  required minLength={6} placeholder="🔒  password" />
+          <input {...register('password')} type={'password'}  required minLength={6} placeholder="🔒  password" />
         </div>
         <div className="login-btn">
           <input type="submit" value="SIGN UP"/>
