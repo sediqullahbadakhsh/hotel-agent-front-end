@@ -19,28 +19,26 @@ export const deleteReservation = (reservation) => ({
 });
 
 export const listReservations = () => async (dispatch) => {
-  if (localStorage.getItem('userId' != null)) {
-    fetch(
-      `http://localhost:3000/v1/users/${localStorage.getItem(
-        'userId',
-      )}/reservations`,
-      {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
-        },
+  fetch(
+    `http://localhost:3000/v1/users/${localStorage.getItem(
+      'userId',
+    )}/reservations`,
+    {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
-    )
-      .then((data) => data.json())
-      .then((data) => {
-        dispatch(viewReservetions(data));
-      })
-      .catch((error) => {
-        throw error;
-      });
-  }
+    },
+  )
+    .then((data) => data.json())
+    .then((data) => {
+      dispatch(viewReservetions(data));
+    })
+    .catch((error) => {
+      throw error;
+    });
 };
 
 export const addHotelReservation = (data) => async (dispatch) => {
