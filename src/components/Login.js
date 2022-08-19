@@ -5,12 +5,11 @@ import { useDispatch } from 'react-redux';
 import { logInUser } from '../redux/User/User';
 import { useNavigate } from 'react-router-dom';
 import auth from '../img/authentication.jpg';
-import { listHotel } from '../redux/Hotel/Hotel';
 
 export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { register, handleSubmit } = useForm();
+  const { register,formState: { errors }, handleSubmit } = useForm();
   const onSubmit = (data) => {
     dispatch(logInUser(data)) ? (navigate('/')) : null;
   };
@@ -29,10 +28,11 @@ export default function Login() {
       </div>
       <form onSubmit={handleSubmit(onSubmit)} style={{ float: 'right' }}>
         <div className="login-form">
-          <input {...register('email')} placeholder="✉️  email" />
+          <input {...register('email', {pattern: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i})} required placeholder="✉️  email" />
+          {errors.email && <p>email is not Valid</p>}
         </div>
         <div className="login-form">
-          <input {...register('password')} placeholder="🔒  password" />
+          <input {...register('password')} required minLength={6} placeholder="🔒  password" />
         </div>
         <div className="login-btn">
           <input type="submit" value="SIGN IN" />
