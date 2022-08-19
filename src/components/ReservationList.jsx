@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteHotelReservation } from '../redux/Reservations/Reservation';
+import { deleteHotelReservation } from '../redux/reservations/reservation';
 
 const ReservationList = ({ reservation }) => {
   const { data } = useSelector((state) => state.MostRecent);
@@ -26,12 +26,8 @@ const ReservationList = ({ reservation }) => {
         type="button"
         className="cancel-reservation"
         onClick={() =>
-          dispatch(deleteHotelReservation(reservation.id))
-            ? window.location.reload()
-            : null
-        }
-      >
-        Cancel Reservation
+          dispatch(deleteHotelReservation(reservation.id))? window.location.reload():null}
+      >Cancel Reservation
       </button>
     </div>
   );
