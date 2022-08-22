@@ -1,4 +1,3 @@
-// const LIST_HOTEL = 'HotelAgentFrontEnd/Hotel/LIST_HOTEL';
 const ADD_RESERVATION = 'HotelAgentFrontEnd/reservations/ADD_RESERVATION';
 const VIEW_RESERVATIONS = 'HotelAgentFrontEnd/reservations/VIEW_RESERVATION';
 const DELETE_RESERVATION = 'HotelAgentFrontEnd/reservations/DELETE_RESERVATION';
@@ -92,6 +91,9 @@ export const deleteHotelReservation = (id) => async (dispatch) => {
     .then((data) => data.json())
     .then((data) => {
       dispatch(deleteReservation(data));
+    })
+    .then(() => {
+      dispatch(listReservations());
     })
     .catch((error) => {
       throw error;

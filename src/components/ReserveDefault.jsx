@@ -3,7 +3,7 @@ import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { addHotelReservation } from '../redux/reservations/reservation';
+import { addHotelReservation } from '../redux/Reservations/Reservation';
 import ReactDatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import countries from '../components/CountryPicker';
