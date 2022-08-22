@@ -1,5 +1,5 @@
-import { listHotel } from '../Hotel/Hotel';
 import { listReservations } from '../Reservations/Reservation';
+import { listHotel } from '../Hotel/Hotel';
 
 const CREATE_USER = 'HotelAgentFrontEnd/User/CREATE_USER';
 const LOGIN_USER = 'HotelAgentFrontEnd/User/LOGIN_USER';
