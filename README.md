@@ -1,4 +1,4 @@
-# [Hotel Reservation :Hotel:]()
+# Hotel Reservation
 
 This is the Front-end App for HotelAgent, an app in which you can reserve a hotel. 
 
@@ -12,7 +12,7 @@ This is the Front-end App for HotelAgent, an app in which you can reserve a hote
 - see the list of available hotels
 ## App functions: :wink:
 
-With [Hotel  Agent](), you can do the following:
+With Hotel  Agent, you can do the following:
 
 - Authenticate users:
   - Create an account by providing a valid name, e-mail, and password with its confirmation. You'll automatically be logged in.
@@ -27,6 +27,10 @@ With [Hotel  Agent](), you can do the following:
 - Reservations:
   - After creating a new reservation or by navigating from the navigation bar, you'll find yourself on the reservations page, where you can check the reservation details and delete them after confirmation.
   
+## API Repo
+
+Check the UI of this App [here](https://github.com/Alexr16/Hotel-agent-back-end).
+
   
 ## Built With: :mag:
 
