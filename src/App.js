@@ -49,8 +49,6 @@ const App = () => {
           <Route path="/reserve" element={<ReservePage />} />
           <Route path="/reserve/:name" element={<ReserveDefault />} />
           <Route path="/reserve/log/:name" element={<ReserveDefaultLog />} />
-          {/* <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/log-in" element={<Login />} /> */}
           <Route path="/hotel" element={<HotelPage />} />
           <Route path="/hotel/:name" element={<DetailsPage />} />
           <Route path="/hotel/log/:name" element={<DetailsHotelLog />} />

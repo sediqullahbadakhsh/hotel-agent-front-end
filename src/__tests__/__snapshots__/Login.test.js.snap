@@ -22,11 +22,6 @@ exports[`Check if Login page renders correctly 1`] = `
   </div>
   <form
     onSubmit={[Function]}
-    style={
-      Object {
-        "float": "right",
-      }
-    }
   >
     <div
       className="login-form"
@@ -42,10 +37,13 @@ exports[`Check if Login page renders correctly 1`] = `
       className="login-form"
     >
       <input
+        minLength={6}
         name="password"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="🔒  password"
+        required={true}
+        type="password"
       />
     </div>
     <div

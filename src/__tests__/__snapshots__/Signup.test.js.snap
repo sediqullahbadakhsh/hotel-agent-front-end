@@ -24,10 +24,13 @@ exports[`Check if Sign up page renders correctly 1`] = `
       className="login-form"
     >
       <input
+        maxLength={20}
+        minLength={3}
         name="name"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="👤  name"
+        required={true}
       />
     </div>
     <div
@@ -44,10 +47,13 @@ exports[`Check if Sign up page renders correctly 1`] = `
       className="login-form"
     >
       <input
+        minLength={6}
         name="password"
         onBlur={[Function]}
         onChange={[Function]}
         placeholder="🔒  password"
+        required={true}
+        type="password"
       />
     </div>
     <div

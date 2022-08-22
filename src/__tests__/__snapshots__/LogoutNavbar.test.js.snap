@@ -81,7 +81,7 @@ exports[`Check if Navbar renders correctly 1`] = `
     >
       <a
         className="nav-link-style"
-        href="/hotel"
+        href="/log-in"
         onClick={[Function]}
         style={
           Object {
@@ -92,7 +92,7 @@ exports[`Check if Navbar renders correctly 1`] = `
           }
         }
       >
-        HOTELS
+        LOG IN
       </a>
     </li>
     <li
@@ -100,7 +100,7 @@ exports[`Check if Navbar renders correctly 1`] = `
     >
       <a
         className="nav-link-style"
-        href="/reserve"
+        href="/sign-up"
         onClick={[Function]}
         style={
           Object {
@@ -111,43 +111,7 @@ exports[`Check if Navbar renders correctly 1`] = `
           }
         }
       >
-        RESERVE
-      </a>
-    </li>
-    <li
-      className="menu-item"
-    >
-      <a
-        className="nav-link-style"
-        href="/reservations"
-        onClick={[Function]}
-        style={
-          Object {
-            "backgroundColor": "white",
-            "color": "#27363f",
-            "display": "block",
-            "textDecoration": "none",
-          }
-        }
-      >
-        RESERVATIONS
-      </a>
-    </li>
-    <li
-      className="menu-item"
-    >
-      <a
-        href="/"
-        onClick={[Function]}
-      >
-        <button
-          className="nav-link-style log-out-btn"
-          label="Reserve"
-          onClick={[Function]}
-          type="button"
-        >
-          LOG OUT
-        </button>
+        SIGN UP
       </a>
     </li>
   </ul>

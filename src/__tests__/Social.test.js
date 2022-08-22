@@ -2,13 +2,13 @@ import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import store from '../redux/configureStore';
-import Navbar from '../components/Navbar';
+import Social from '../components/Social';
 
 it('Check if Navbar renders correctly', () => {
   const tree = renderer.create(
     <Provider store={store}>
       <BrowserRouter>
-        <Navbar />
+        <Social />
       </BrowserRouter>
     </Provider>,
   );

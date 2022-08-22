@@ -11,19 +11,5 @@ exports[`Check if Hotel page renders correctly 1`] = `
       Hotel List
     </h1>
   </div>
-  <a
-    href="/add-hotel"
-    onClick={[Function]}
-  >
-    <button
-      className="addNewBtn "
-      type="button"
-    >
-      Add new Hotel
-    </button>
-  </a>
-  <div
-    className="hotel-list"
-  />
 </div>
 `;
