@@ -72,7 +72,7 @@ This project was developed by a team of 5 people, you can check that out in our 
 
 - This is a screenshot of our **kanban board** (UI) at the beginning of the project:
 
-![Start_kanban_board](https://user-images.githubusercontent.com/43178495/185791527-979a6822-b150-4e01-a35d-4f8b2360dcc5.png)
+![Start_kanban_board](https://user-images.githubusercontent.com/43178495/185960254-3cd3dfb2-41f5-4deb-b087-3d6ff46cd4f6.png)
 
 > [You can check our  issues with that info by clicking here](https://github.com/Alexr16/Hotel-agent-back-end/issues?q=is%3Aissue+is%3Aclosed)
 
