@@ -29,7 +29,7 @@ With Hotel  Agent, you can do the following:
   
 ## API Repo
 
-Check the UI of this App [here](https://github.com/Alexr16/Hotel-agent-back-end).
+Check the Api of this App [here](https://github.com/Alexr16/Hotel-agent-back-end).
 
   
 ## Built With: :mag:
