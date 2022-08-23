@@ -59,6 +59,21 @@ export default function LogOutNavBar() {
             FEATURED HOTELS
           </NavLink>
         </li>
+        <li className="menu-item" key={1}>
+          <NavLink
+            className="nav-link-style"
+            onClick={handleClick}
+            style={({ isActive }) => ({
+              display: 'block',
+              textDecoration: 'none',
+              color: isActive ? 'white' : '#27363f',
+              backgroundColor: isActive ? '#97bf0d' : 'white',
+            })}
+            to="/contributors"
+          >
+            CONTRIBUTERS
+          </NavLink>
+        </li>
 
         <li className="menu-item" key={5}>
           <NavLink

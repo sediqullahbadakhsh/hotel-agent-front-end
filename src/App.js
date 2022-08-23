@@ -19,6 +19,7 @@ import ReserveDefault from './components/ReserveDefault';
 import DetailsHotelLog from './components/DetailsHotelLog';
 import ReserveDefaultLog from './components/ReserveDefaultLog';
 import ReservationsPage from './pages/ReservationsPage';
+import Contributors from './pages/Contributers/Contributers';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -67,6 +68,7 @@ const App = () => {
         <Route path="/hotel/:name" element={<DetailsPage />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/log-in" element={<Login />} />
+        <Route path="/contributors/*" element={<Contributors />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
