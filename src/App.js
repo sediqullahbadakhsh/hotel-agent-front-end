@@ -27,7 +27,7 @@ const App = () => {
   var { status } = useSelector((state) => state.Hotel);
 
   const getSatus = async () => {
-    status = useSelector((state) => state.Hotel);
+    status;
   };
   useEffect(() => {
     const getData = async () => {

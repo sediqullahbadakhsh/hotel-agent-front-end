@@ -59,7 +59,7 @@ export default function LogOutNavBar() {
             FEATURED HOTELS
           </NavLink>
         </li>
-        <li className="menu-item" key={1}>
+        <li className="menu-item" key={7}>
           <NavLink
             className="nav-link-style"
             onClick={handleClick}
