@@ -1,5 +1,3 @@
-// import './ErrorPage.scss';
-
 const ErrorPage = () => (
   <>
     <div className="App center-screen">

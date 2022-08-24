@@ -5,12 +5,6 @@ $gray: #a3a4a4;
 $dark-gray: #626262;
 $icons: #3d3d3d;
 
-// font-family: 'Inter', sans-serif;
-// font-family: 'Lato', sans-serif;
-// font-family: 'Roboto Condensed', sans-serif;
-// font-family: 'Source Sans Pro', sans-serif;
-// font-family: 'Yellowtail', cursive;
-
 body {
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
@@ -121,7 +115,6 @@ ul {
 .icons {
   display: flex;
   gap: 0.5rem;
-  // margin: 2rem 0;
   padding-inline-start: 0;
 }
 
@@ -133,17 +126,12 @@ ul {
   display: inline-block;
   text-decoration: none;
   text-decoration-line: none;
-  // position: relative;
-  // padding-top: 10px;
-  // margin-right: 1rem;
 }
 
 .footer-menu {
   margin-bottom: 1rem;
   color: $text;
-  // font-family: 'Inter', sans-serif;
   font-family: 'Lato', sans-serif;
-  // font-family: 'Roboto Condensed', sans-serif;
 
   p {
     font-size: 10px;
@@ -417,8 +405,6 @@ ul {
     p {
       color: white;
       font-size: 1.5rem;
-      // font-weight: 200;
-      // margin-top: -20px;
     }
 
     padding-bottom: 1rem;
@@ -579,10 +565,6 @@ ul {
 }
 
 .reserve-form {
-  // ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  //   color: white;
-  //   opacity: 1; /* Firefox */
-  // }
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
@@ -707,6 +689,7 @@ ul {
   background-color: white;
   appearance: none;
   font-size: inherit;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 821px) {
@@ -723,12 +706,7 @@ ul {
     border: none;
     background: none;
     margin-top: 1.2rem;
-    // justify-content: space-between;
-    // align-items: center;
-    // margin: 0;
     padding: 0;
-    // background: rgba(33, 33, 33, 0.7);
-    // font-family: Red Hat Display, sans-serif;
   }
 
   .hotel-list {
@@ -750,9 +728,7 @@ ul {
   }
 
   .menu-item {
-    // padding: 1rem 0;
     margin-left: 1rem;
-    // border-bottom: 1px solid black;
     width: 95%;
   }
 

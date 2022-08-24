@@ -10,20 +10,20 @@ const HomePage = () => {
       <div className="list-heading">
         <h1>Hotel List</h1>
       </div>
-      { status === 'successfully loaded' && (
-      <>
-        <Link to="/add-hotel">
-          <button type="button" className="addNewBtn ">
-            Add new Hotel
-          </button>
-        </Link>
-        <div className="hotel-list">
-          {data.map((hotel) => (
-            <HotelList hotel={hotel} key={hotel.id} />
-          ))}
-        </div>
+      {status === 'successfully loaded' && (
+        <>
+          <Link to="/add-hotel">
+            <button type="button" className="addNewBtn ">
+              Add new Hotel
+            </button>
+          </Link>
+          <div className="hotel-list">
+            {data.map((hotel) => (
+              <HotelList hotel={hotel} key={hotel.id} />
+            ))}
+          </div>
 
-      </>
+        </>
       )}
     </div>
   );

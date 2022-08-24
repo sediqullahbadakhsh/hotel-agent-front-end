@@ -1,5 +1,5 @@
 import './App.scss';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -19,15 +19,25 @@ import ReserveDefault from './components/ReserveDefault';
 import DetailsHotelLog from './components/DetailsHotelLog';
 import ReserveDefaultLog from './components/ReserveDefaultLog';
 import ReservationsPage from './pages/ReservationsPage';
+import Protected from './components/Protected';
 
 const App = () => {
   const dispatch = useDispatch();
+  const [isLoggedIn, setisLoggedIn] = useState(false);
+  const { status } = useSelector((state) => state.Hotel);
   /* eslint-disable */
-  var { status } = useSelector((state) => state.Hotel);
 
   const getSatus = async () => {
-    status = useSelector((state) => state.Hotel);
+    status
+    if (status === 'No Data' && localStorage.getItem('userId') === 'null'){
+      setisLoggedIn(false);
+    } else {
+      setisLoggedIn(true);
+    }
   };
+
+  console.log(isLoggedIn);
+
   useEffect(() => {
     const getData = async () => {
       await dispatch(fetchMostRecentHotels());
@@ -37,40 +47,33 @@ const App = () => {
     };
 
     getData();
-  }, []);
+  }, [status]);
 
-  if (status === 'successfully loaded') {
-    // eslint-enable
     return (
+      <>
       <Router>
-        <Navbar />
+        { isLoggedIn && localStorage.getItem('userId') !== 'null' ? (
+          <Navbar />
+        ):(
+          <LogOutNavBar />
+        )}
         <Routes>
           <Route path="/" element={<FeaturedPage />} />
-          <Route path="/reserve" element={<ReservePage />} />
-          <Route path="/reserve/:name" element={<ReserveDefault />} />
-          <Route path="/reserve/log/:name" element={<ReserveDefaultLog />} />
-          <Route path="/hotel" element={<HotelPage />} />
-          <Route path="/hotel/:name" element={<DetailsPage />} />
-          <Route path="/hotel/log/:name" element={<DetailsHotelLog />} />
-          <Route path="/add-hotel" element={<AddHotel />} />
+          <Route path="/reserve" element={<Protected isLoggedIn={isLoggedIn}> <ReservePage /> </Protected>} />
+          <Route path="/reserve/:name" element={<Protected isLoggedIn={isLoggedIn}> <ReserveDefault /> </Protected>} />
+          <Route path="/reserve/log/:name" element={<Protected isLoggedIn={isLoggedIn}> <ReserveDefaultLog /> </Protected>} />
+          <Route path="/hotel" element={<Protected isLoggedIn={isLoggedIn}> <HotelPage /> </Protected>} />
+          <Route path="/hotel/:name" element={ <DetailsPage />} />
+          <Route path="/hotel/log/:name" element={<Protected isLoggedIn={isLoggedIn}> <DetailsHotelLog /> </Protected>} />
+          <Route path="/add-hotel" element={<Protected isLoggedIn={isLoggedIn}> <AddHotel /> </Protected>} />
           <Route path="*" element={<ErrorPage />} />
-          <Route path="/reservations" element={<ReservationsPage />} />
+          <Route path="/reservations" element={<Protected isLoggedIn={isLoggedIn}> <ReservationsPage /> </Protected>} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/log-in" element={<Login />} />
         </Routes>
       </Router>
+      </>
     );
-  }
-  return (
-    <Router>
-      <LogOutNavBar />
-      <Routes>
-        <Route path="/" element={<FeaturedPage />} />
-        <Route path="/hotel/:name" element={<DetailsPage />} />
-        <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/log-in" element={<Login />} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-    </Router>
-  );
 };
 
 export default App;

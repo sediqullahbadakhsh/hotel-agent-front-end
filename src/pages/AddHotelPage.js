@@ -1,44 +1,113 @@
 /* eslint-disable */
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { addHotel } from '../redux/Hotel/Hotel';
 import create from '../img/create.jpg';
+import Alert from '../components/Alert';
 
 export default function AddHotel() {
   const dispatch = useDispatch();
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data,e) => {dispatch(addHotel(data)); e.target.reset();}
+  const [success, setSucces] = useState(false);
+  useEffect(() => {
+    if (success) {
+    const timeId = setTimeout(() => {
+      setSucces(false)
+    }, 1500)
+
+    return () => {
+      clearTimeout(timeId)
+    }
+    }
+  }, [success]);
+
+  const { register, formState: { errors }, handleSubmit } = useForm();
+  const onSubmit = (data, e) => { dispatch(addHotel(data)); e.target.reset(); 
+        setSucces(true); }
   return (
-    <div className="reserve-container" style={{ 
-      backgroundImage: `url(${create})` 
-    }}>
-      <div className="reserve-heading">
-              <h1>ADD YOUR HOTEL</h1>
-              <hr></hr>
-              <p>Explore & Discover</p>
-      </div>
-      <form onSubmit={handleSubmit(onSubmit)} style = {{float : "right"}}>
-        <div className="login-form">
-          <input {...register('name')} placeholder="🏠 hotel name" />
+    <><>
+      {success?  (<Alert type="success">
+        <p>Hotel added successfully</p>
+      </Alert>) : null}
+
+    </><div
+      className="reserve-container"
+      style={{
+        backgroundImage: `url(${create})`,
+      }}
+    >
+        <div className="reserve-heading">
+          <h1>ADD YOUR HOTEL</h1>
+          <hr />
+          <p>Explore & Discover</p>
         </div>
-        <div className="login-form">
-          <input {...register('description')} placeholder="📄 description" />
-        </div>
-        <div className="login-form">
-          <input {...register('cost')} type = "number"  placeholder="cost" step={0.01} />
-        </div>
-        <div className="login-form">
-          <input {...register('address')} placeholder="🗺 address" />
-        </div>
-        <div className="login-form">
-          <input {...register('image')}  placeholder="🎑 image" />
-        </div>
-        <div className="login-btn">
-          <input type="submit" value="ADD HOTEL"/>
-        </div>
-      </form>
-    </div>
+        <form onSubmit={handleSubmit(onSubmit)} style={{ float: 'right' }}>
+          <div className="login-form">
+            <input
+              {...register('name', {
+                required: true,
+                minLength: 4,
+                pattern: /^[a-zA-Z]+$/,
+              })}
+              placeholder="🏠 hotel name" />
+            {errors.name?.type === 'required' && <span> Hotel name is required</span>}
+            {errors.name?.type === 'minLength' && (
+              <span>Hotel name must be at least 4 letters long</span>
+            )}
+            {errors.name?.type === 'pattern' && (
+              <span>Hotel name must be letters</span>
+            )}
+          </div>
+          <div className="login-form">
+            <input
+              {...register('description', {
+                required: true,
+                minLength: 10,
+              })}
+              placeholder="📄 description" />
+            {errors.description?.type === 'required' && <span> Hotel description is required</span>}
+            {errors.description?.type === 'minLength' && (
+              <span>Hotel description must be at least 10 letters long</span>
+            )}
+          </div>
+          <div className="login-form">
+            <input
+              {...register('cost', {
+                required: true,
+                min: 1,
+              })}
+              type="number"
+              placeholder="cost"
+              step={0.01} />
+            {errors.cost?.type === 'required' && <span>Cost is required</span>}
+            {errors.cost?.type === 'min' && (
+              <span>Cost must be more than 0</span>
+            )}
+          </div>
+          <div className="login-form">
+            <input
+              {...register('address', {
+                required: true,
+                minLength: 4,
+              })}
+              placeholder="🗺 address" />
+            {errors.address?.type === 'required' && <span> Hotel address is required</span>}
+            {errors.address?.type === 'minLength' && (
+              <span>Hotel address must be at least 4 letters long</span>
+            )}
+          </div>
+          <div className="login-form">
+            <input
+              {...register('image', {
+                required: true,
+              })}
+              placeholder="🎑 image" />
+            {errors.image?.type === 'required' && <span> Image is required</span>}
+          </div>
+          <div className="login-btn">
+            <input type="submit" value="ADD HOTEL" />
+          </div>
+        </form>
+      </div></>
   );
 }
