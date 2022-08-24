@@ -22,7 +22,6 @@ const HomePage = () => {
               <HotelList hotel={hotel} key={hotel.id} />
             ))}
           </div>
-
         </>
       )}
     </div>

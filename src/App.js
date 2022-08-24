@@ -20,6 +20,7 @@ import DetailsHotelLog from './components/DetailsHotelLog';
 import ReserveDefaultLog from './components/ReserveDefaultLog';
 import ReservationsPage from './pages/ReservationsPage';
 import Protected from './components/Protected';
+import Contributors from './pages/Contributers/Contributers';
 
 const App = () => {
   const dispatch = useDispatch();

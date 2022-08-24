@@ -46,7 +46,6 @@ const HotelList = ({ hotel }) => {
         <div className="img-container">
           <img src={hotel.image[0]} alt={hotel.name} className="carousel-image" />
         </div>
-
         <button
           type="button"
           className="rmBtn"
