@@ -15,7 +15,7 @@ const ContributorDetails = () => {
         'software engineer and Full-Stack Developer, who is passionate about Chess and open source.',
       github: 'https://github.com/ahmedadel56',
       twitter: '',
-      linkedIn: 'https://www.linkedin.com/in/ahmed-adel56/',
+      linkedIn: 'https://www.linkedin.com/in/ahmed-adel56',
     },
     {
       slug: 'jorge',
@@ -51,20 +51,20 @@ const ContributorDetails = () => {
         <p>
           <a href={github}>
             <AiFillGithub />
+            {github.replace('https://github.com/', ' @')}
           </a>
-          {github.replace('https://github.com/', ' @')}
         </p>
         <p>
           <a href={linkedIn}>
             <AiFillLinkedin />
+            {linkedIn.replace('https://www.linkedin.com/in/', ' @')}
           </a>
-          {linkedIn.replace('https://www.linkedin.com/in/', ' @')}
         </p>
         <p>
           <a href={twitter}>
             <AiFillTwitterCircle />
+            {twitter.replace('https://twitter.com/', ' @')}
           </a>
-          {twitter.replace('https://twitter.com/', ' @')}
         </p>
       </div>
     </div>
