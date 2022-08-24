@@ -9,21 +9,24 @@ const Contributers = () => (
   <div className="App">
     <div className="cont-container">
       <div>
-        <h2>Ahmad</h2>
         <NavLink to="ahmad">
-          <img src={ahmad} alt="Ahmad" />
+          <div className="img-container">
+            <img src={ahmad} alt="Ahmad" />
+          </div>
         </NavLink>
       </div>
       <div>
-        <h2>Jorge</h2>
         <NavLink to="jorge">
-          <img src={jorge} alt="jorge" />
+          <div className="img-container">
+            <img src={jorge} alt="jorge" />
+          </div>
         </NavLink>
       </div>
       <div>
-        <h2>Sediq</h2>
         <NavLink to="sediq">
-          <img src={sediq} alt="sediq" />
+          <div className="img-container">
+            <img src={sediq} alt="sediq" />
+          </div>
         </NavLink>
       </div>
     </div>
