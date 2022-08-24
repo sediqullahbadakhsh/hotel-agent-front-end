@@ -47,21 +47,24 @@ const ContributorDetails = () => {
     <div className="cont-details-container">
       <h1>{name}</h1>
       <div className="cont-details">
-        <p>{details}</p>
+        <h4>{details}</h4>
         <p>
           <a href={github}>
             <AiFillGithub />
           </a>
+          {github.replace('https://github.com/', ' @')}
         </p>
         <p>
           <a href={linkedIn}>
             <AiFillLinkedin />
           </a>
+          {linkedIn.replace('https://www.linkedin.com/in/', ' @')}
         </p>
         <p>
           <a href={twitter}>
             <AiFillTwitterCircle />
           </a>
+          {twitter.replace('https://twitter.com/', ' @')}
         </p>
       </div>
     </div>
