@@ -50,6 +50,7 @@ export default function AddHotel() {
                 pattern: /^[a-zA-Z]+$/,
               })}
               placeholder="🏠 hotel name" />
+              <p>
             {errors.name?.type === 'required' && <span> Hotel name is required</span>}
             {errors.name?.type === 'minLength' && (
               <span>Hotel name must be at least 4 letters long</span>
@@ -57,6 +58,7 @@ export default function AddHotel() {
             {errors.name?.type === 'pattern' && (
               <span>Hotel name must be letters</span>
             )}
+            </p>
           </div>
           <div className="login-form">
             <input
@@ -65,10 +67,12 @@ export default function AddHotel() {
                 minLength: 10,
               })}
               placeholder="📄 description" />
+              <p>
             {errors.description?.type === 'required' && <span> Hotel description is required</span>}
             {errors.description?.type === 'minLength' && (
               <span>Hotel description must be at least 10 letters long</span>
             )}
+            </p>
           </div>
           <div className="login-form">
             <input
@@ -79,10 +83,12 @@ export default function AddHotel() {
               type="number"
               placeholder="cost"
               step={0.01} />
+              <p>
             {errors.cost?.type === 'required' && <span>Cost is required</span>}
             {errors.cost?.type === 'min' && (
               <span>Cost must be more than 0</span>
             )}
+            </p>
           </div>
           <div className="login-form">
             <input
@@ -91,10 +97,12 @@ export default function AddHotel() {
                 minLength: 4,
               })}
               placeholder="🗺 address" />
+              <p>
             {errors.address?.type === 'required' && <span> Hotel address is required</span>}
             {errors.address?.type === 'minLength' && (
               <span>Hotel address must be at least 4 letters long</span>
             )}
+            </p>
           </div>
           <div className="login-form">
             <input
@@ -102,7 +110,9 @@ export default function AddHotel() {
                 required: true,
               })}
               placeholder="🎑 image" />
+              <p>
             {errors.image?.type === 'required' && <span> Image is required</span>}
+            </p>
           </div>
           <div className="login-btn">
             <input type="submit" value="ADD HOTEL" />

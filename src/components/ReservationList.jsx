@@ -24,6 +24,11 @@ const ReservationList = ({ reservation }) => {
 
   return (
     <>
+    <>
+      {success ? (<Alert type="success">
+        <p>Reservation removed successfully</p>
+      </Alert>) : null}
+    </>
     <div className="res-card">
         <div className="reservation-card">
           <div className="card-top">
@@ -52,11 +57,6 @@ const ReservationList = ({ reservation }) => {
         >Cancel Reservation
         </button>
       </div>
-      <>
-      {success ? (<Alert type="success">
-        <p>Reservation removed successfully</p>
-      </Alert>) : null}
-    </>
       </>
   );
 };

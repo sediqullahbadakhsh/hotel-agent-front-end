@@ -103,6 +103,7 @@ const ReservePage = () => {
                       min: 1,
                       pattern: /^[0-9]*$/,
                     })} />
+                    <p>
                   {errors.number_of_days?.type === 'required' && <span>Number of days is required</span>}
                   {errors.number_of_days?.type === 'min' && (
                     <span>Number of days must be more than 0</span>
@@ -110,6 +111,7 @@ const ReservePage = () => {
                   {errors.number_of_days?.type === 'pattern' && (
                     <span>Number of days must be numeric</span>
                   )}
+                  </p>
                 </div>
                 <div className="login-form">
                   <input
@@ -119,6 +121,7 @@ const ReservePage = () => {
                       min: 1,
                       pattern: /^[0-9]*$/,
                     })} />
+                    <p>
                   {errors.number_of_rooms?.type === 'required' && <span>Number of rooms is required</span>}
                   {errors.number_of_rooms?.type === 'min' && (
                     <span>Number of rooms must be more than 0</span>
@@ -126,6 +129,7 @@ const ReservePage = () => {
                   {errors.number_of_rooms?.type === 'pattern' && (
                     <span>Number of rooms must be numeric</span>
                   )}
+                  </p>
                 </div>
                 <div className="login-form">
                   <input
@@ -135,6 +139,7 @@ const ReservePage = () => {
                       min: 1,
                       pattern: /^[0-9]*$/,
                     })} />
+                    <p>
                   {errors.number_of_guests?.type === 'required' && <span>Number of guests is required</span>}
                   {errors.number_of_guests?.type === 'min' && (
                     <span>Number of guests must be more than 0</span>
@@ -142,6 +147,7 @@ const ReservePage = () => {
                   {errors.number_of_guests?.type === 'pattern' && (
                     <span>Number of guests must be numeric</span>
                   )}
+                  </p>
                 </div>
               </section>
               <section className="select-hotel-container">
