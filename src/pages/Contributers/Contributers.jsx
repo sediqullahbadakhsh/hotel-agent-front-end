@@ -1,20 +1,32 @@
 import React from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
 import ContributorDetails from './ContributorDetails';
+import ahmad from './cont-image/ahmad.jpg';
+import jorge from './cont-image/jorge.jpg';
+import sediq from './cont-image/sediq.jpg';
 
 const Contributers = () => (
   <div className="App">
-    <ul className="about__list">
-      <li>
-        <NavLink to="cont-ahmad">Ahmad</NavLink>
-      </li>
-      <li>
-        <NavLink to="cont-jorge">Jorge</NavLink>
-      </li>
-      <li>
-        <NavLink to="cont-sediq">Sediq</NavLink>
-      </li>
-    </ul>
+    <div className="cont-container">
+      <div>
+        <h2>Ahmad</h2>
+        <NavLink to="ahmad">
+          <img src={ahmad} alt="Ahmad" />
+        </NavLink>
+      </div>
+      <div>
+        <h2>Jorge</h2>
+        <NavLink to="jorge">
+          <img src={jorge} alt="jorge" />
+        </NavLink>
+      </div>
+      <div>
+        <h2>Sediq</h2>
+        <NavLink to="sediq">
+          <img src={sediq} alt="sediq" />
+        </NavLink>
+      </div>
+    </div>
 
     <Routes>
       <Route path=":slug" element={<ContributorDetails />} />

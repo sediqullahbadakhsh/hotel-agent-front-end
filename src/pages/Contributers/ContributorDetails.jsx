@@ -4,36 +4,31 @@ import { useParams } from 'react-router-dom';
 const ContributorDetails = () => {
   const aboutData = [
     {
-      slug: '*',
-      name: 'nothing',
-      details: 'Ahmad',
-      github: '',
+      slug: 'ahmad',
+      name: 'Ahmad Adel',
+      details:
+        'software engineer and Full-Stack Developer, who is passionate about Chess and open source.',
+      github: 'https://github.com/ahmedadel56',
       twitter: '',
-      linkedIn: '',
+      linkedIn: 'https://www.linkedin.com/in/ahmed-adel56/',
     },
     {
-      slug: 'cont-ahmad',
-      name: 'Ahmad',
-      details: 'Ahmad',
-      github: '',
-      twitter: '',
-      linkedIn: '',
+      slug: 'jorge',
+      name: 'Jorge Rios',
+      details:
+        'passionate Full-stack developer and Electronic Engineer from Ecuador. Enjoy learning languages and frameworks like React and React Native.',
+      github: 'https://github.com/Alexr16',
+      twitter: 'https://twitter.com/ReveloJ',
+      linkedIn: 'https://www.linkedin.com/in/jorgeriosr',
     },
     {
-      slug: 'cont-jorge',
-      name: 'Jorge',
-      details: 'Jorge',
-      github: '',
-      twitter: '',
-      linkedIn: '',
-    },
-    {
-      slug: 'cont-sediq',
-      name: 'Sediq',
-      details: '',
-      github: '',
-      twitter: '',
-      linkedIn: '',
+      slug: 'sediq',
+      name: 'Sediqullah Badakhsh',
+      details:
+        'Full-Stack Software Developer, loves music and code, passionate to learn more languages and frameworks',
+      github: 'https://github.com/sediqullahbadakhsh',
+      twitter: 'https://twitter.com/sediqullah6',
+      linkedIn: 'https://www.linkedin.com/in/sediqullah',
     },
   ];
 
