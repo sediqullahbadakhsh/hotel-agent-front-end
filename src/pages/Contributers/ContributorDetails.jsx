@@ -1,5 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import {
+  AiFillGithub,
+  AiFillLinkedin,
+  AiFillTwitterCircle,
+} from 'react-icons/ai';
 
 const ContributorDetails = () => {
   const aboutData = [
@@ -34,11 +39,31 @@ const ContributorDetails = () => {
 
   const { slug } = useParams();
   const aboutContent = aboutData.find((item) => item.slug === slug);
-  const { name } = aboutContent;
+  /* eslint-disable */
+  const { name, details, github, twitter, linkedIn } = aboutContent;
+  /* eslint-enable */
 
   return (
-    <div className="App">
+    <div className="cont-details-container">
       <h1>{name}</h1>
+      <div className="cont-details">
+        <p>{details}</p>
+        <p>
+          <a href={github}>
+            <AiFillGithub />
+          </a>
+        </p>
+        <p>
+          <a href={linkedIn}>
+            <AiFillLinkedin />
+          </a>
+        </p>
+        <p>
+          <a href={twitter}>
+            <AiFillTwitterCircle />
+          </a>
+        </p>
+      </div>
     </div>
   );
 };
