@@ -6,7 +6,7 @@ import jorge from './cont-image/jorge.jpg';
 import sediq from './cont-image/sediq.jpg';
 
 const Contributers = () => (
-  <div className="App">
+  <div className="App cont-main">
     <div className="cont-container">
       <div>
         <NavLink to="ahmad">

@@ -926,6 +926,26 @@ ul {
       }
     }
   }
+  // Contributers
+  .cont-main {
+    display: flex;
+    flex-direction: row;
+    .cont-container {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      border-bottom: none;
+      img {
+        width: 150px;
+      }
+    }
+    .cont-details-container {
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
 }
 
 @media screen and (max-width: 415px) {
