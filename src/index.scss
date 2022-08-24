@@ -911,7 +911,8 @@ ul {
   // Contributers
   .cont-main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    margin-top: 3rem;
 
     .cont-container {
       margin-top: 20px;

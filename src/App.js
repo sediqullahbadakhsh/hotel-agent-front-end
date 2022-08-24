@@ -71,6 +71,7 @@ const App = () => {
           <Route path="/reservations" element={<Protected isLoggedIn={isLoggedIn}> <ReservationsPage /> </Protected>} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/log-in" element={<Login />} />
+          <Route path="/contributors/*" element={<Contributors />} />
         </Routes>
       </Router>
       </>
