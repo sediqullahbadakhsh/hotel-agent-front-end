@@ -55,27 +55,11 @@ const DetailsPage = () => {
             customTransition="all .5"
             transitionDuration={500}
           >
-            <div>
-              <img
-                src={hotel[0].image[0]}
-                alt="hotel"
-                className="details-img"
-              />
-            </div>
-            <div>
-              <img
-                src={hotel[0].image[1]}
-                alt="hotel"
-                className="details-img"
-              />
-            </div>
-            <div>
-              <img
-                src={hotel[0].image[2]}
-                alt="hotel"
-                className="details-img"
-              />
-            </div>
+            {hotel[0].image.map((image) => (
+              <div>
+              <img src={image} alt="hotel" key={image} className="details-img"/>
+              </div>
+            ))}
           </Carousel>
         </div>
         <div className="hotel-details">
