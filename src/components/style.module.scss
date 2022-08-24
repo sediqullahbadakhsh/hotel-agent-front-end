@@ -1,9 +1,11 @@
 .alert {
-  position: relative;
+  position: fixed;
+  left: 40%;
+  width: 50vh;
   padding: 0.5rem 1rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
-  margin-left: 170px;
+  top: 0;
 }
 
 .error {
