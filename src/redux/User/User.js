@@ -58,7 +58,9 @@ export const createUser = (data) => async (dispatch) => {
         setToken(res.content.auth_token);
       }
     })
-    .catch((error) => { throw error; });
+    .catch((error) => {
+      throw error;
+    });
 };
 
 export const logInUser = (data) => async (dispatch) => {
@@ -82,7 +84,9 @@ export const logInUser = (data) => async (dispatch) => {
       dispatch(listHotel());
       dispatch(listReservations());
     })
-    .catch((error) => { throw error; });
+    .catch((error) => {
+      throw error;
+    });
 };
 
 const UserReducer = (state = initialState, action) => {

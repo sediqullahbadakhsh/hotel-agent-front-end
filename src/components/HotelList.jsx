@@ -32,9 +32,7 @@ const HotelList = ({ hotel }) => {
         /* eslint-disable */
         type="button"
         className="rmBtn"
-        onClick={() =>
-          dispatch(deleteHotel(hotel.id))
-        }
+        onClick={() => dispatch(deleteHotel(hotel.id))}
         /* eslint-enable */
       >
         <AiOutlineDelete style={btnStyle} />
