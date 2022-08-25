@@ -49,6 +49,7 @@ export default function AddHotel() {
     data.image = [images];
     await dispatch(addHotel(data)); 
     e.target.reset(); 
+    setImages([]);
     setSucces(true); 
   }
   return (
@@ -141,7 +142,6 @@ export default function AddHotel() {
                 required: true,
               })}
               placeholder="🎑 image" />
-              <img src={url}/>
               <p>
             {errors.image?.type === 'required' && <span> Image is required</span>}
             </p>
