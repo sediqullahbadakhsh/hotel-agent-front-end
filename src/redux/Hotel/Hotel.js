@@ -60,7 +60,7 @@ export const addHotel = (data) => async (dispatch) => {
         description: data.description,
         cost: data.cost,
         address: data.address,
-        image: data.image,
+        image: [...data.image],
       }),
     },
   )
