@@ -21,9 +21,36 @@ export default function AddHotel() {
     }
   }, [success]);
 
+  const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const uploadImage = async (files) => {
+    console.log(files);
+    const formData = new FormData();
+    formData.append('file', files[0]);
+    formData.append("upload_preset", "f4iaoiyl");
+    setLoading(true);
+    console.log(...formData)
+    await fetch('https://api.cloudinary.com/v1_1/dtaolltra/image/upload', {
+      method: 'post',
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      setImages(data.secure_url);
+    }
+    )
+    .catch(err => console.log(err));
+    setLoading(false);
+  }
+
   const { register, formState: { errors }, handleSubmit } = useForm();
-  const onSubmit = (data, e) => { dispatch(addHotel(data)); e.target.reset(); 
-        setSucces(true); }
+  const onSubmit = async (data, e) => {
+    data.image = [images];
+    await dispatch(addHotel(data)); 
+    e.target.reset(); 
+    setSucces(true); 
+  }
   return (
     <><>
       {success?  (<Alert type="success">
@@ -106,14 +133,24 @@ export default function AddHotel() {
           </div>
           <div className="login-form">
             <input
+             type={'file'}
+             multiple
+             accept="image/*"
               {...register('image', {
+                onChange: (e) => uploadImage(e.target.files),
                 required: true,
               })}
               placeholder="🎑 image" />
+              <img src={url}/>
               <p>
             {errors.image?.type === 'required' && <span> Image is required</span>}
             </p>
           </div>
+          {loading ? (
+            <h3>Loading...</h3>
+          ):(
+            <img src={images} style={{ width: '300px' }} />
+          )}
           <div className="login-btn">
             <input type="submit" value="ADD HOTEL" />
           </div>
