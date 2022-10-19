@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/hotel-agent-front-end/static/css/main.62fd6361.css",
+    "main.js": "/hotel-agent-front-end/static/js/main.fa68bec6.js",
+    "static/media/authentication.jpg": "/hotel-agent-front-end/static/media/authentication.421d205922dd9198ea27.jpg",
+    "static/media/background.jpg": "/hotel-agent-front-end/static/media/background.893a82b451a78c3171de.jpg",
+    "static/media/create.jpg": "/hotel-agent-front-end/static/media/create.d8c8686c649b83e40e69.jpg",
+    "static/media/ahmad.jpg": "/hotel-agent-front-end/static/media/ahmad.911f4ba27b4fff721b5d.jpg",
+    "static/media/jorge.jpg": "/hotel-agent-front-end/static/media/jorge.0166264506e60c7a2d04.jpg",
+    "static/media/sediq.jpg": "/hotel-agent-front-end/static/media/sediq.46b8d9b7e6b7f0bc11f1.jpg",
+    "static/media/revicons.eot": "/hotel-agent-front-end/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/hotel-agent-front-end/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/hotel-agent-front-end/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/hotel-agent-front-end/index.html",
+    "main.62fd6361.css.map": "/hotel-agent-front-end/static/css/main.62fd6361.css.map",
+    "main.fa68bec6.js.map": "/hotel-agent-front-end/static/js/main.fa68bec6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.62fd6361.css",
+    "static/js/main.fa68bec6.js"
+  ]
+}
